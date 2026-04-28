@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WatchTrack MontrePro — Logiciel SAV Horlogerie</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; }
+
+    /* HEADER */
+    header { position: fixed; top: 0; width: 100%; background: rgba(10,10,10,0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.08); z-index: 100; padding: 0 40px; height: 70px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 42px; height: 42px; background: linear-gradient(135deg, #34C759, #2E8B4A); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 4px 16px rgba(52,199,89,0.4); }
+    .logo-text { font-size: 20px; font-weight: 700; letter-spacing: -0.5px; }
+    .logo-sub { font-size: 11px; color: #86868b; }
+    .header-btns { display: flex; gap: 12px; align-items: center; }
+    .btn-outline { padding: 8px 20px; border: 1.5px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+    .btn-outline:hover { border-color: #34C759; color: #34C759; }
+    .btn-green { padding: 8px 20px; background: linear-gradient(135deg, #34C759, #2E8B4A); border-radius: 10px; color: white; text-decoration: none; font-size: 13px; font-weight: 700; box-shadow: 0 4px 16px rgba(52,199,89,0.4); transition: all 0.2s; border: none; cursor: pointer; }
+    .btn-green:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(52,199,89,0.5); }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 40px 80px; background: radial-gradient(ellipse at top, #1a2e1a 0%, #0a0a0a 60%); position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(52,199,89,0.08) 0%, transparent 70%); }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: rgba(52,199,89,0.12); border: 1px solid rgba(52,199,89,0.3); border-radius: 20px; font-size: 12px; font-weight: 600; color: #34C759; margin-bottom: 24px; }
+    .hero h1 { font-size: clamp(42px, 7vw, 80px); font-weight: 800; letter-spacing: -2px; line-height: 1.05; margin-bottom: 24px; }
+    .hero h1 span { background: linear-gradient(135deg, #34C759, #90EE90); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 20px; color: #86868b; max-width: 600px; margin: 0 auto 40px; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+    .btn-hero-primary { padding: 16px 36px; background: linear-gradient(135deg, #34C759, #2E8B4A); border-radius: 14px; color: white; text-decoration: none; font-size: 16px; font-weight: 700; box-shadow: 0 8px 32px rgba(52,199,89,0.45); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(52,199,89,0.55); }
+    .btn-hero-secondary { padding: 16px 36px; background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 14px; color: white; text-decoration: none; font-size: 16px; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-hero-secondary:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+    .hero-stats { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; }
+    .hero-stat { text-align: center; }
+    .hero-stat-val { font-size: 32px; font-weight: 800; color: #34C759; letter-spacing: -1px; }
+    .hero-stat-label { font-size: 12px; color: #86868b; margin-top: 4px; }
+
+    /* FEATURES */
+    .section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-tag { font-size: 12px; font-weight: 700; color: #34C759; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-size: clamp(32px, 4vw, 48px); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+    .section-sub { font-size: 18px; color: #86868b; max-width: 600px; line-height: 1.7; margin-bottom: 60px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 28px; transition: all 0.3s; }
+    .feature-card:hover { background: rgba(52,199,89,0.06); border-color: rgba(52,199,89,0.2); transform: translateY(-4px); }
+    .feature-icon { width: 50px; height: 50px; background: rgba(52,199,89,0.12); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 16px; }
+    .feature-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .feature-desc { font-size: 14px; color: #86868b; line-height: 1.7; }
+
+    /* STATUTS */
+    .statuts-section { background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 80px 40px; }
+    .statuts-grid { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; max-width: 900px; margin: 0 auto; }
+    .statut-pill { padding: 10px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+
+    /* PRICING */
+    .pricing-section { padding: 100px 40px; background: radial-gradient(ellipse at bottom, #1a2e1a 0%, #0a0a0a 70%); }
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 800px; margin: 0 auto; }
+    .pricing-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 40px; text-align: center; transition: all 0.3s; }
+    .pricing-card.featured { background: linear-gradient(135deg, rgba(52,199,89,0.12), rgba(46,139,74,0.08)); border-color: rgba(52,199,89,0.4); position: relative; }
+    .pricing-card.featured::before { content: '⭐ POPULAIRE'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #34C759, #2E8B4A); color: white; padding: 4px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; }
+    .pricing-icon { font-size: 40px; margin-bottom: 16px; }
+    .pricing-price { font-size: 52px; font-weight: 800; letter-spacing: -2px; margin-bottom: 4px; }
+    .pricing-period { font-size: 14px; color: #86868b; margin-bottom: 24px; }
+    .pricing-features { list-style: none; margin-bottom: 32px; }
+    .pricing-features li { padding: 8px 0; font-size: 14px; color: #ccc; display: flex; align-items: center; gap: 8px; }
+    .pricing-features li::before { content: '✅'; font-size: 12px; }
+    .btn-pricing { display: block; padding: 14px; border-radius: 12px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; width: 100%; }
+    .btn-pricing-green { background: linear-gradient(135deg, #34C759, #2E8B4A); color: white; box-shadow: 0 8px 24px rgba(52,199,89,0.4); }
+    .btn-pricing-outline { background: rgba(255,255,255,0.06); color: white; border: 1.5px solid rgba(255,255,255,0.15) !important; }
+
+    /* ESSAI */
+    .trial-section { padding: 80px 40px; text-align: center; }
+    .trial-box { background: linear-gradient(135deg, rgba(52,199,89,0.1), rgba(46,139,74,0.05)); border: 1px solid rgba(52,199,89,0.25); border-radius: 28px; padding: 60px 40px; max-width: 700px; margin: 0 auto; }
+    .trial-box h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; }
+    .trial-box p { font-size: 16px; color: #86868b; margin-bottom: 32px; line-height: 1.7; }
+
+    /* FOOTER */
+    footer { padding: 40px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; color: #86868b; font-size: 13px; }
+    footer a { color: #34C759; text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+      header { padding: 0 20px; }
+      .header-btns .btn-outline { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <div class="logo-icon">⌚</div>
+    <div>
+      <div class="logo-text">WatchTrack</div>
+      <div class="logo-sub">MontrePro</div>
+    </div>
+  </div>
+  <div class="header-btns">
+    <a href="#fonctionnalites" class="btn-outline">Fonctionnalités</a>
+    <a href="#tarifs" class="btn-outline">Tarifs</a>
+    <a href="#essai" class="btn-green">Essai gratuit 15 jours</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div style="position:relative;z-index:1;">
+    <div class="hero-badge">⌚ Spécialement conçu pour les horlogers</div>
+    <h1>Le logiciel SAV<br/><span>fait pour vous</span></h1>
+    <p>WatchTrack MontrePro simplifie la gestion de vos réparations. Tickets, statuts, factures PDF, bons de dépôt — tout en un seul endroit.</p>
+    <div class="hero-btns">
+      <a href="#essai" class="btn-hero-primary">📥 Télécharger gratuitement</a>
+      <a href="#fonctionnalites" class="btn-hero-secondary">Voir les fonctionnalités →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-val">15j</div>
+        <div class="hero-stat-label">Essai gratuit</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">2min</div>
+        <div class="hero-stat-label">Installation</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">19,90€</div>
+        <div class="hero-stat-label">Par mois seulement</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-val">100%</div>
+        <div class="hero-stat-label">Dédié horlogerie</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<div id="fonctionnalites" style="background:#0a0a0a; border-top:1px solid rgba(255,255,255,0.06);">
+  <div class="section">
+    <div class="section-tag">Fonctionnalités</div>
+    <h2 class="section-title">Tout ce dont vous avez besoin</h2>
+    <p class="section-sub">Un logiciel simple, rapide et professionnel — conçu par un horloger pour les horlogers.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <div class="feature-title">Gestion des réparations</div>
+        <div class="feature-desc">Enregistrez chaque montre avec ticket, client, marque, modèle, type de réparation et prix estimé.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔄</div>
+        <div class="feature-title">Suivi des statuts</div>
+        <div class="feature-desc">6 statuts colorés : Reçue, En diagnostic, En réparation, En attente de pièce, Prête, Rendue.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🖨️</div>
+        <div class="feature-title">Bon de dépôt PDF</div>
+        <div class="feature-desc">Générez un bon de dépôt en 1 clic avec 2 exemplaires — client et atelier — prêts à découper.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <div class="feature-title">Factures PDF</div>
+        <div class="feature-desc">Factures professionnelles avec TVA 20%, numérotation automatique et coordonnées de votre atelier.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👤</div>
+        <div class="feature-title">Fiche client complète</div>
+        <div class="feature-desc">Historique de toutes les montres par client, total dépensé, marques favorites et badge client fidèle.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚠️</div>
+        <div class="feature-title">Alertes automatiques</div>
+        <div class="feature-desc">Notification Windows si une montre reste plus d'1 mois en atelier. Ne perdez plus aucune réparation.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Tableau de bord</div>
+        <div class="feature-desc">Vue d'ensemble : montres en cours, prêtes à rendre, en attente de pièce et CA encaissé.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📥</div>
+        <div class="feature-title">Export CSV</div>
+        <div class="feature-desc">Exportez toutes vos réparations en fichier Excel en 1 clic pour vos archives ou comptabilité.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔐</div>
+        <div class="feature-title">Licence sécurisée</div>
+        <div class="feature-desc">Chaque licence est liée à votre ordinateur uniquement. Vos données restent privées et protégées.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATUTS -->
+<div class="statuts-section">
+  <div style="text-align:center; max-width:1200px; margin:0 auto;">
+    <div class="section-tag" style="text-align:center;">Statuts de réparation</div>
+    <h2 class="section-title" style="text-align:center; margin-bottom:40px;">Suivez chaque montre en temps réel</h2>
+    <div class="statuts-grid">
+      <div class="statut-pill" style="background:#C8E4FF; color:#1A5FA8;">🔵 Reçue</div>
+      <div class="statut-pill" style="background:#EAC8FF; color:#6B1E9E;">🟣 En diagnostic</div>
+      <div class="statut-pill" style="background:#FFD9B0; color:#B84A00;">🟠 En réparation</div>
+      <div class="statut-pill" style="background:#FFE870; color:#A07800;">🟡 En attente de pièce</div>
+      <div class="statut-pill" style="background:#A8EFC0; color:#1A6E35;">🟢 Prête</div>
+      <div class="statut-pill" style="background:#FFB8B8; color:#8B1A1A;">🔴 Rendue</div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICING -->
+<div id="tarifs" class="pricing-section">
+  <div style="text-align:center; max-width:1200px; margin:0 auto;">
+    <div class="section-tag" style="text-align:center;">Tarifs</div>
+    <h2 class="section-title" style="text-align:center; margin-bottom:16px;">Simple et transparent</h2>
+    <p style="text-align:center; color:#86868b; font-size:18px; margin-bottom:60px;">15 jours d'essai gratuit — aucune carte bancaire requise</p>
+    <div class="pricing-grid">
+      <div class="pricing-card featured">
+        <div class="pricing-icon">🔄</div>
+        <div class="pricing-price" style="color:#34C759;">19,90€</div>
+        <div class="pricing-period">par mois — résiliable à tout moment</div>
+        <ul class="pricing-features">
+          <li>Toutes les fonctionnalités</li>
+          <li>Mises à jour incluses</li>
+          <li>Support par email</li>
+          <li>1 ordinateur</li>
+        </ul>
+        <a href="https://buy.stripe.com/00w14ncT29W28fD8o26g804" class="btn-pricing btn-pricing-green">Commencer maintenant</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-icon">💎</div>
+        <div class="pricing-price">149€</div>
+        <div class="pricing-period">paiement unique — à vie</div>
+        <ul class="pricing-features">
+          <li>Toutes les fonctionnalités</li>
+          <li>Mises à jour incluses</li>
+          <li>Support par email</li>
+          <li>1 ordinateur</li>
+        </ul>
+        <a href="https://buy.stripe.com/fZu00j2eo7NU7bz33I6g805" class="btn-pricing btn-pricing-outline">Acheter à vie</a>
+      </div>
+    </div>
+    <p style="color:#86868b; font-size:13px; margin-top:32px;">💳 Paiement sécurisé par Stripe — 📧 Support : javier69m@icloud.com</p>
+  </div>
+</div>
+
+<!-- ESSAI GRATUIT -->
+<div id="essai" class="trial-section">
+  <div class="trial-box">
+    <div style="font-size:60px; margin-bottom:20px;">⌚</div>
+    <h2>Essayez gratuitement<br/>pendant 15 jours</h2>
+    <p>Téléchargez WatchTrack MontrePro et testez toutes les fonctionnalités sans engagement. Aucune carte bancaire requise.</p>
+    <a href="LIEN_WETRANSFER_ICI" class="btn-hero-primary" style="display:inline-flex; margin:0 auto;">
+      📥 Télécharger WatchTrack MontrePro
+    </a>
+    <p style="font-size:12px; color:#86868b; margin-top:20px;">Windows 10/11 — Installation en 2 minutes — Données stockées localement</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:12px;">
+    <div style="width:32px; height:32px; background:linear-gradient(135deg,#34C759,#2E8B4A); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px;">⌚</div>
+    <strong>WatchTrack MontrePro</strong>
+  </div>
+  <p>Logiciel de gestion SAV horlogerie — Conçu par un horloger pour les horlogers</p>
+  <p style="margin-top:8px;">📧 <a href="mailto:javier69m@icloud.com">javier69m@icloud.com</a> — © 2026 WatchTrack MontrePro — Tous droits réservés</p>
+</footer>
+
+</body>
+</html>
