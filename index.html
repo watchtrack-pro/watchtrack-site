@@ -39,7 +39,6 @@
     .hero-stat-label { font-size: 12px; color: #86868b; margin-top: 4px; font-weight: 500; }
 
     .card { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.8); border-radius: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
-
     .section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
     .section-tag { font-size: 11px; font-weight: 700; color: #2E8B4A; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
     .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; color: #1d1d1f; }
@@ -87,6 +86,11 @@
     footer a { color: #2E8B4A; text-decoration: none; font-weight: 600; }
     footer a:hover { color: #34C759; }
 
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes slideIn { from { opacity:0; transform:translateX(-20px); } to { opacity:1; transform:translateX(0); } }
+    .demo-stat { animation-fill-mode: forwards; }
+    .statut-card { transition: all 0.3s; }
+
     @media (max-width: 768px) {
       .pricing-grid { grid-template-columns: 1fr; }
       .web-grid { grid-template-columns: 1fr; }
@@ -128,22 +132,10 @@
       <a href="#fonctionnalites" class="btn-hero-secondary">Voir les fonctionnalités →</a>
     </div>
     <div class="hero-stats">
-      <div style="text-align:center;">
-        <div class="hero-stat-val">15j</div>
-        <div class="hero-stat-label">Essai gratuit</div>
-      </div>
-      <div style="text-align:center;">
-        <div class="hero-stat-val">2min</div>
-        <div class="hero-stat-label">Installation</div>
-      </div>
-      <div style="text-align:center;">
-        <div class="hero-stat-val">19,90€</div>
-        <div class="hero-stat-label">Par mois seulement</div>
-      </div>
-      <div style="text-align:center;">
-        <div class="hero-stat-val">100%</div>
-        <div class="hero-stat-label">Dédié horlogerie</div>
-      </div>
+      <div style="text-align:center;"><div class="hero-stat-val">15j</div><div class="hero-stat-label">Essai gratuit</div></div>
+      <div style="text-align:center;"><div class="hero-stat-val">2min</div><div class="hero-stat-label">Installation</div></div>
+      <div style="text-align:center;"><div class="hero-stat-val">19,90€</div><div class="hero-stat-label">Par mois seulement</div></div>
+      <div style="text-align:center;"><div class="hero-stat-val">100%</div><div class="hero-stat-label">Dédié horlogerie</div></div>
     </div>
   </div>
 </section>
@@ -155,66 +147,18 @@
     <h2 class="section-title">Tout ce dont vous avez besoin</h2>
     <p class="section-sub">Un logiciel simple, rapide et professionnel — conçu par un horloger pour les horlogers.</p>
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">📋</div>
-        <div class="feature-title">Gestion des réparations</div>
-        <div class="feature-desc">Enregistrez chaque montre avec ticket, client, marque, modèle, type de réparation et prix estimé.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔄</div>
-        <div class="feature-title">Suivi des statuts</div>
-        <div class="feature-desc">7 statuts colorés : Reçue, En diagnostic, En réparation, En attente de pièce, En Atelier, Prête, Rendue.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">💰</div>
-        <div class="feature-title">Acompte client</div>
-        <div class="feature-desc">Enregistrez l'acompte reçu et suivez le reste dû automatiquement. Visible sur le bon de dépôt et la facture.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🖨️</div>
-        <div class="feature-title">Bon de dépôt PDF</div>
-        <div class="feature-desc">Générez un bon de dépôt en 1 clic avec 2 exemplaires — client et atelier — avec acompte et reste dû.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📄</div>
-        <div class="feature-title">Factures PDF</div>
-        <div class="feature-desc">Factures professionnelles avec TVA 20%, acompte déduit, numérotation automatique et coordonnées de votre atelier.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">👤</div>
-        <div class="feature-title">Fiche client complète</div>
-        <div class="feature-desc">Historique de toutes les montres, total dépensé, acomptes reçus, reste dû global et badge client fidèle.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚠️</div>
-        <div class="feature-title">Alertes automatiques</div>
-        <div class="feature-desc">Notification si une montre reste plus d'1 mois en atelier. Ne perdez plus aucune réparation.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <div class="feature-title">Tableau de bord</div>
-        <div class="feature-desc">Vue d'ensemble : montres en cours, prêtes à rendre, en attente de pièce, CA encaissé et acomptes reçus.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">☁️</div>
-        <div class="feature-title">Version Web</div>
-        <div class="feature-desc">Accédez à vos réparations depuis n'importe quel navigateur. Données sauvegardées dans le cloud automatiquement.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">💾</div>
-        <div class="feature-title">Sauvegarde & Restauration</div>
-        <div class="feature-desc">Sauvegardez vos données en 1 clic et restaurez-les en cas de panne. Compatible OneDrive.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🇫🇷🇬🇧</div>
-        <div class="feature-title">Bilingue FR / EN</div>
-        <div class="feature-desc">Basculez entre le français et l'anglais en 1 clic. Toute l'interface est traduite instantanément.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🔐</div>
-        <div class="feature-title">Licence sécurisée</div>
-        <div class="feature-desc">Chaque licence est liée à votre ordinateur uniquement. Vos données restent privées et protégées.</div>
-      </div>
+      <div class="feature-card"><div class="feature-icon">📋</div><div class="feature-title">Gestion des réparations</div><div class="feature-desc">Enregistrez chaque montre avec ticket, client, marque, modèle, type de réparation et prix estimé.</div></div>
+      <div class="feature-card"><div class="feature-icon">🔄</div><div class="feature-title">Suivi des statuts</div><div class="feature-desc">7 statuts colorés : Reçue, En diagnostic, En réparation, En attente de pièce, En Atelier, Prête, Rendue.</div></div>
+      <div class="feature-card"><div class="feature-icon">💰</div><div class="feature-title">Acompte client</div><div class="feature-desc">Enregistrez l'acompte reçu et suivez le reste dû automatiquement. Visible sur le bon de dépôt et la facture.</div></div>
+      <div class="feature-card"><div class="feature-icon">🖨️</div><div class="feature-title">Bon de dépôt PDF</div><div class="feature-desc">Générez un bon de dépôt en 1 clic avec 2 exemplaires — client et atelier — avec acompte et reste dû.</div></div>
+      <div class="feature-card"><div class="feature-icon">📄</div><div class="feature-title">Factures PDF</div><div class="feature-desc">Factures professionnelles avec TVA 20%, acompte déduit, numérotation automatique et coordonnées de votre atelier.</div></div>
+      <div class="feature-card"><div class="feature-icon">👤</div><div class="feature-title">Fiche client complète</div><div class="feature-desc">Historique de toutes les montres, total dépensé, acomptes reçus, reste dû global et badge client fidèle.</div></div>
+      <div class="feature-card"><div class="feature-icon">⚠️</div><div class="feature-title">Alertes automatiques</div><div class="feature-desc">Notification si une montre reste plus d'1 mois en atelier. Ne perdez plus aucune réparation.</div></div>
+      <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Tableau de bord</div><div class="feature-desc">Vue d'ensemble : montres en cours, prêtes à rendre, en attente de pièce, CA encaissé et acomptes reçus.</div></div>
+      <div class="feature-card"><div class="feature-icon">☁️</div><div class="feature-title">Version Web</div><div class="feature-desc">Accédez à vos réparations depuis n'importe quel navigateur. Données sauvegardées dans le cloud automatiquement.</div></div>
+      <div class="feature-card"><div class="feature-icon">💾</div><div class="feature-title">Sauvegarde & Restauration</div><div class="feature-desc">Sauvegardez vos données en 1 clic et restaurez-les en cas de panne. Compatible OneDrive.</div></div>
+      <div class="feature-card"><div class="feature-icon">🇫🇷🇬🇧</div><div class="feature-title">Bilingue FR / EN</div><div class="feature-desc">Basculez entre le français et l'anglais en 1 clic. Toute l'interface est traduite instantanément.</div></div>
+      <div class="feature-card"><div class="feature-icon">🔐</div><div class="feature-title">Licence sécurisée</div><div class="feature-desc">Chaque licence est liée à votre ordinateur uniquement. Vos données restent privées et protégées.</div></div>
     </div>
   </div>
 </div>
@@ -225,14 +169,14 @@
     <div class="section-tag" style="text-align:center;">Statuts de réparation</div>
     <h2 class="section-title" style="text-align:center; margin-bottom:40px;">Suivez chaque montre en temps réel</h2>
     <div class="statuts-grid">
-  <div class="statut-pill" style="background:#FCE4EC; color:#C2185B; border-color:#C2185B;">🌸 Reçue</div>
-  <div class="statut-pill" style="background:#E1BEE7; color:#6B1E9E; border-color:#6B1E9E;">🟣 En diagnostic</div>
-  <div class="statut-pill" style="background:#FFE0B2; color:#E65100; border-color:#E65100;">🟠 En réparation</div>
-  <div class="statut-pill" style="background:#FFF176; color:#F57F00; border-color:#F57F00;">🟡 En attente de pièce</div>
-  <div class="statut-pill" style="background:#BBDEFB; color:#1565C0; border-color:#1565C0;">🔵 En Atelier</div>
-  <div class="statut-pill" style="background:#A8EFC0; color:#1A6E35; border-color:#1A6E35;">🟢 Prête</div>
-  <div class="statut-pill" style="background:#FFB8B8; color:#8B1A1A; border-color:#8B1A1A;">🔴 Rendue</div>
-</div>
+      <div class="statut-pill" style="background:#FCE4EC; color:#C2185B; border-color:#C2185B;">🌸 Reçue</div>
+      <div class="statut-pill" style="background:#E1BEE7; color:#6B1E9E; border-color:#6B1E9E;">🟣 En diagnostic</div>
+      <div class="statut-pill" style="background:#FFE0B2; color:#E65100; border-color:#E65100;">🟠 En réparation</div>
+      <div class="statut-pill" style="background:#FFF176; color:#F57F00; border-color:#F57F00;">🟡 En attente de pièce</div>
+      <div class="statut-pill" style="background:#BBDEFB; color:#1565C0; border-color:#1565C0;">🔵 En Atelier</div>
+      <div class="statut-pill" style="background:#A8EFC0; color:#1A6E35; border-color:#1A6E35;">🟢 Prête</div>
+      <div class="statut-pill" style="background:#FFB8B8; color:#8B1A1A; border-color:#8B1A1A;">🔴 Rendue</div>
+    </div>
   </div>
 </div>
 
@@ -246,39 +190,11 @@
     </div>
     <div class="web-grid">
       <div>
-        <div class="web-feature">
-          <div class="web-feature-icon">☁️</div>
-          <div>
-            <div style="font-size:16px; font-weight:700; margin-bottom:4px;">Données dans le cloud</div>
-            <div style="font-size:14px; color:#86868b; line-height:1.6;">Vos réparations sont sauvegardées automatiquement dans le cloud. Aucune perte de données.</div>
-          </div>
-        </div>
-        <div class="web-feature">
-          <div class="web-feature-icon">🔐</div>
-          <div>
-            <div style="font-size:16px; font-weight:700; margin-bottom:4px;">Compte sécurisé</div>
-            <div style="font-size:14px; color:#86868b; line-height:1.6;">Connexion par email et mot de passe. Vos données sont séparées et privées.</div>
-          </div>
-        </div>
-        <div class="web-feature">
-          <div class="web-feature-icon">💰</div>
-          <div>
-            <div style="font-size:16px; font-weight:700; margin-bottom:4px;">Acomptes & reste dû</div>
-            <div style="font-size:14px; color:#86868b; line-height:1.6;">Toutes les fonctionnalités disponibles incluant le suivi des acomptes et du reste dû.</div>
-          </div>
-        </div>
-        <div class="web-feature">
-          <div class="web-feature-icon">📱</div>
-          <div>
-            <div style="font-size:16px; font-weight:700; margin-bottom:4px;">Accessible partout</div>
-            <div style="font-size:14px; color:#86868b; line-height:1.6;">PC, Mac, tablette, smartphone — accédez à votre atelier depuis n'importe où.</div>
-          </div>
-        </div>
-        <div style="margin-top:32px;">
-          <a href="https://app.watchtrack-pro.fr" class="btn-hero-blue" style="display:inline-flex;">
-            ☁️ Accéder à la version Web
-          </a>
-        </div>
+        <div class="web-feature"><div class="web-feature-icon">☁️</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Données dans le cloud</div><div style="font-size:14px; color:#86868b; line-height:1.6;">Vos réparations sont sauvegardées automatiquement dans le cloud. Aucune perte de données.</div></div></div>
+        <div class="web-feature"><div class="web-feature-icon">🔐</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Compte sécurisé</div><div style="font-size:14px; color:#86868b; line-height:1.6;">Connexion par email et mot de passe. Vos données sont séparées et privées.</div></div></div>
+        <div class="web-feature"><div class="web-feature-icon">💰</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Acomptes & reste dû</div><div style="font-size:14px; color:#86868b; line-height:1.6;">Toutes les fonctionnalités disponibles incluant le suivi des acomptes et du reste dû.</div></div></div>
+        <div class="web-feature"><div class="web-feature-icon">📱</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Accessible partout</div><div style="font-size:14px; color:#86868b; line-height:1.6;">PC, Mac, tablette, smartphone — accédez à votre atelier depuis n'importe où.</div></div></div>
+        <div style="margin-top:32px;"><a href="https://app.watchtrack-pro.fr" class="btn-hero-blue" style="display:inline-flex;">☁️ Accéder à la version Web</a></div>
       </div>
       <div style="background:rgba(255,255,255,0.9); border-radius:24px; padding:32px; box-shadow:0 8px 40px rgba(0,122,255,0.1); border:1px solid rgba(0,122,255,0.15);">
         <div style="text-align:center; margin-bottom:24px;">
@@ -303,167 +219,140 @@
     </div>
   </div>
 </div>
+
 <!-- DEMO ANIMEE -->
 <div style="background:rgba(255,255,255,0.4); border-top:1px solid rgba(0,0,0,0.06); border-bottom:1px solid rgba(0,0,0,0.06); padding:80px 40px; backdrop-filter:blur(10px);">
   <div style="max-width:1200px; margin:0 auto;">
-    <div style="text-align:center; margin-bottom:56px;">
+    <div style="text-align:center; margin-bottom:40px;">
       <div class="section-tag" style="text-align:center;">Démo interactive</div>
       <h2 class="section-title" style="text-align:center;">Voyez WatchTrack en action</h2>
       <p style="text-align:center; color:#86868b; font-size:17px; max-width:580px; margin:0 auto;">Découvrez comment gérer vos réparations en quelques clics</p>
     </div>
+
     <div style="background:rgba(255,255,255,0.95); border-radius:24px; box-shadow:0 20px 60px rgba(0,0,0,0.12); overflow:hidden; max-width:900px; margin:0 auto;">
 
-      <!-- BARRE DU HAUT -->
-      <div style="background:linear-gradient(135deg, #2E8B4A, #1a5c30); padding:16px 24px; display:flex; align-items:center; justify-content:space-between;">
+      <!-- BARRE NAVIGATION APP -->
+      <div style="background:linear-gradient(135deg, #2E8B4A, #1a5c30); padding:14px 24px; display:flex; align-items:center; justify-content:space-between;">
         <div style="display:flex; align-items:center; gap:10px;">
-          <div style="width:32px; height:32px; background:rgba(255,255,255,0.2); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px;">⌚</div>
+          <div style="width:30px; height:30px; background:rgba(255,255,255,0.2); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:15px;">⌚</div>
           <div>
-            <div style="color:white; font-weight:700; font-size:14px;">WatchTrack MontrePro</div>
+            <div style="color:white; font-weight:700; font-size:13px;">WatchTrack MontrePro</div>
             <div style="color:rgba(255,255,255,0.7); font-size:10px;">Gestion des réparations</div>
           </div>
         </div>
-        <div style="display:flex; gap:8px;">
-          <div style="padding:6px 12px; background:rgba(255,255,255,0.2); border-radius:8px; color:white; font-size:11px; font-weight:600;">Tableau de bord</div>
-          <div style="padding:6px 12px; background:rgba(255,255,255,0.1); border-radius:8px; color:rgba(255,255,255,0.7); font-size:11px;">Réparations</div>
-          <div style="padding:6px 12px; background:rgba(255,255,255,0.1); border-radius:8px; color:rgba(255,255,255,0.7); font-size:11px;">👤 Clients</div>
+        <div style="display:flex; gap:6px;">
+          <div id="nav-dashboard" style="padding:5px 10px; background:rgba(255,255,255,0.25); border-radius:7px; color:white; font-size:10px; font-weight:700;">📊 Tableau de bord</div>
+          <div id="nav-form" style="padding:5px 10px; background:rgba(255,255,255,0.1); border-radius:7px; color:rgba(255,255,255,0.6); font-size:10px;">➕ Nouvelle</div>
+          <div id="nav-statuts" style="padding:5px 10px; background:rgba(255,255,255,0.1); border-radius:7px; color:rgba(255,255,255,0.6); font-size:10px;">🎨 Statuts</div>
         </div>
       </div>
 
-      <!-- CONTENU DEMO -->
-      <div style="padding:28px;">
+      <!-- TITRE SCENE -->
+      <div style="padding:16px 24px 0; text-align:center;">
+        <div id="demo-title" style="font-size:16px; font-weight:700; color:#1d1d1f; margin-bottom:2px;">📊 Tableau de bord en temps réel</div>
+        <div id="demo-subtitle" style="font-size:12px; color:#86868b;">Visualisez toutes vos réparations et votre CA en un coup d'œil</div>
+      </div>
 
-        <!-- STATS -->
-        <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:12px; margin-bottom:24px;">
-          <div class="demo-stat" style="background:#EDF5FF; border-radius:14px; padding:14px; text-align:center; border-top:3px solid #1A5FA8; animation:fadeInUp 0.5s ease forwards; opacity:0; animation-delay:0.1s;">
-            <div style="font-size:20px; margin-bottom:4px;">⌚</div>
-            <div style="font-size:22px; font-weight:800; color:#1A5FA8;">8</div>
-            <div style="font-size:10px; color:#86868b;">En atelier</div>
+      <div style="padding:20px 24px 24px;">
+
+        <!-- SCENE 1 : DASHBOARD -->
+        <div id="demo-dashboard">
+          <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-bottom:16px;">
+            <div style="background:#EDF5FF; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #1A5FA8;"><div style="font-size:16px;">⌚</div><div style="font-size:18px; font-weight:800; color:#1A5FA8;">8</div><div style="font-size:9px; color:#86868b;">En atelier</div></div>
+            <div style="background:#F0FBF4; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #1A6E35;"><div style="font-size:16px;">✅</div><div style="font-size:18px; font-weight:800; color:#1A6E35;">3</div><div style="font-size:9px; color:#86868b;">Prêtes</div></div>
+            <div style="background:#FFFDE7; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #F57F00;"><div style="font-size:16px;">⏳</div><div style="font-size:18px; font-weight:800; color:#F57F00;">2</div><div style="font-size:9px; color:#86868b;">Attente pièce</div></div>
+            <div style="background:#EDE7F6; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #6B1E9E;"><div style="font-size:16px;">📋</div><div style="font-size:18px; font-weight:800; color:#6B1E9E;">24</div><div style="font-size:9px; color:#86868b;">Total fiches</div></div>
+            <div style="background:#FFF3E0; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #B84A00;"><div style="font-size:16px;">💰</div><div style="font-size:18px; font-weight:800; color:#B84A00;">1 240€</div><div style="font-size:9px; color:#86868b;">CA encaissé</div></div>
+            <div style="background:#E8F5E9; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #1A6E35;"><div style="font-size:16px;">💵</div><div style="font-size:18px; font-weight:800; color:#1A6E35;">350€</div><div style="font-size:9px; color:#86868b;">Acomptes</div></div>
           </div>
-          <div class="demo-stat" style="background:#F0FBF4; border-radius:14px; padding:14px; text-align:center; border-top:3px solid #1A6E35; animation:fadeInUp 0.5s ease forwards; opacity:0; animation-delay:0.2s;">
-            <div style="font-size:20px; margin-bottom:4px;">✅</div>
-            <div style="font-size:22px; font-weight:800; color:#1A6E35;">3</div>
-            <div style="font-size:10px; color:#86868b;">Prêtes</div>
-          </div>
-          <div class="demo-stat" style="background:#FFFDE7; border-radius:14px; padding:14px; text-align:center; border-top:3px solid #F57F00; animation:fadeInUp 0.5s ease forwards; opacity:0; animation-delay:0.3s;">
-            <div style="font-size:20px; margin-bottom:4px;">⏳</div>
-            <div style="font-size:22px; font-weight:800; color:#F57F00;">2</div>
-            <div style="font-size:10px; color:#86868b;">Attente pièce</div>
-          </div>
-          <div class="demo-stat" style="background:#EDE7F6; border-radius:14px; padding:14px; text-align:center; border-top:3px solid #6B1E9E; animation:fadeInUp 0.5s ease forwards; opacity:0; animation-delay:0.4s;">
-            <div style="font-size:20px; margin-bottom:4px;">📋</div>
-            <div style="font-size:22px; font-weight:800; color:#6B1E9E;">24</div>
-            <div style="font-size:10px; color:#86868b;">Total fiches</div>
-          </div>
-          <div class="demo-stat" style="background:#FFF3E0; border-radius:14px; padding:14px; text-align:center; border-top:3px solid #B84A00; animation:fadeInUp 0.5s ease forwards; opacity:0; animation-delay:0.5s;">
-            <div style="font-size:20px; margin-bottom:4px;">💰</div>
-            <div style="font-size:22px; font-weight:800; color:#B84A00;">1 240€</div>
-            <div style="font-size:10px; color:#86868b;">CA encaissé</div>
-          </div>
-          <div class="demo-stat" style="background:#E8F5E9; border-radius:14px; padding:14px; text-align:center; border-top:3px solid #1A6E35; animation:fadeInUp 0.5s ease forwards; opacity:0; animation-delay:0.6s;">
-            <div style="font-size:20px; margin-bottom:4px;">💵</div>
-            <div style="font-size:22px; font-weight:800; color:#1A6E35;">350€</div>
-            <div style="font-size:10px; color:#86868b;">Acomptes</div>
+          <div style="background:white; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+            <div style="padding:10px 16px; background:rgba(248,248,248,0.8); border-bottom:1px solid rgba(0,0,0,0.06);"><span style="font-size:10px; color:#86868b; font-weight:700; text-transform:uppercase;">Réparations récentes</span></div>
+            <table style="width:100%; border-collapse:collapse; font-size:11px;">
+              <thead><tr style="background:rgba(248,248,248,0.8);">
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Ticket</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Client</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Montre</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Statut</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Prix</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Acompte</th>
+              </tr></thead>
+              <tbody id="demo-tbody"></tbody>
+            </table>
           </div>
         </div>
 
-        <!-- TABLEAU REPARATIONS -->
-        <div style="background:white; border-radius:16px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
-          <div style="padding:14px 20px; background:rgba(248,248,248,0.8); border-bottom:1px solid rgba(0,0,0,0.06); display:flex; justify-content:space-between; align-items:center;">
-            <span style="font-size:11px; color:#86868b; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">Réparations récentes</span>
+        <!-- SCENE 2 : FORMULAIRE -->
+        <div id="demo-form" style="display:none;">
+          <div style="background:white; border-radius:12px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+              <div>
+                <label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Nom client *</label>
+                <input id="demo-client" type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box; font-family:inherit; transition:all 0.3s;" placeholder="Jean Dupont" />
+              </div>
+              <div>
+                <label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Téléphone</label>
+                <input type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box;" value="06 12 34 56 78" />
+              </div>
+              <div>
+                <label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Marque *</label>
+                <input id="demo-montre" type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box; transition:all 0.3s;" placeholder="Rolex, Seiko..." />
+              </div>
+              <div>
+                <label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Type de réparation</label>
+                <input id="demo-rep" type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box; transition:all 0.3s;" placeholder="Révision complète..." />
+              </div>
+              <div>
+                <label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Prix estimé</label>
+                <input type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box;" value="350€" />
+              </div>
+              <div>
+                <label style="font-size:10px; color:#A07800; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">💰 Acompte reçu</label>
+                <input type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box;" value="150€" />
+              </div>
+            </div>
+            <div style="display:flex; justify-content:flex-end; gap:10px;">
+              <div style="padding:9px 18px; background:rgba(0,0,0,0.06); border-radius:9px; font-size:12px; color:#86868b; font-weight:600;">Annuler</div>
+              <div id="demo-save-btn" style="padding:9px 18px; background:linear-gradient(135deg,#34C759,#2E8B4A); color:white; border-radius:9px; font-size:12px; font-weight:700; transition:all 0.3s;">✓ Enregistrer</div>
+            </div>
           </div>
-          <table style="width:100%; border-collapse:collapse; font-size:12px;">
-            <thead>
-              <tr style="background:rgba(248,248,248,0.8);">
-                <th style="padding:10px 16px; text-align:left; font-size:10px; color:#86868b; font-weight:700; text-transform:uppercase;">Ticket</th>
-                <th style="padding:10px 16px; text-align:left; font-size:10px; color:#86868b; font-weight:700; text-transform:uppercase;">Client</th>
-                <th style="padding:10px 16px; text-align:left; font-size:10px; color:#86868b; font-weight:700; text-transform:uppercase;">Montre</th>
-                <th style="padding:10px 16px; text-align:left; font-size:10px; color:#86868b; font-weight:700; text-transform:uppercase;">Statut</th>
-                <th style="padding:10px 16px; text-align:left; font-size:10px; color:#86868b; font-weight:700; text-transform:uppercase;">Prix</th>
-                <th style="padding:10px 16px; text-align:left; font-size:10px; color:#86868b; font-weight:700; text-transform:uppercase;">Acompte</th>
-              </tr>
-            </thead>
-            <tbody id="demo-tbody">
-            </tbody>
-          </table>
+        </div>
+
+        <!-- SCENE 3 : STATUTS -->
+        <div id="demo-statuts" style="display:none;">
+          <div style="margin-bottom:16px; padding:12px 16px; background:rgba(52,199,89,0.08); border-radius:12px; border:1px solid rgba(52,199,89,0.2); text-align:center;">
+            <span style="font-size:12px; color:#2E8B4A; font-weight:700;">Cliquez sur un statut pour l'appliquer instantanément !</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:20px;">
+            <div class="statut-card" data-statut="0" style="background:#FCE4EC; border:2px solid #C2185B; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🌸</div><div style="font-size:11px; font-weight:700; color:#C2185B;">Reçue</div></div>
+            <div class="statut-card" data-statut="1" style="background:#E1BEE7; border:2px solid #6B1E9E; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🟣</div><div style="font-size:11px; font-weight:700; color:#6B1E9E;">En diagnostic</div></div>
+            <div class="statut-card" data-statut="2" style="background:#FFE0B2; border:2px solid #E65100; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🟠</div><div style="font-size:11px; font-weight:700; color:#E65100;">En réparation</div></div>
+            <div class="statut-card" data-statut="3" style="background:#FFF176; border:2px solid #F57F00; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🟡</div><div style="font-size:11px; font-weight:700; color:#F57F00;">Attente pièce</div></div>
+            <div class="statut-card" data-statut="4" style="background:#BBDEFB; border:2px solid #1565C0; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🔵</div><div style="font-size:11px; font-weight:700; color:#1565C0;">En Atelier</div></div>
+            <div class="statut-card" data-statut="5" style="background:#A8EFC0; border:2px solid #1A6E35; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🟢</div><div style="font-size:11px; font-weight:700; color:#1A6E35;">Prête</div></div>
+            <div class="statut-card" data-statut="6" style="background:#FFB8B8; border:2px solid #8B1A1A; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🔴</div><div style="font-size:11px; font-weight:700; color:#8B1A1A;">Rendue</div></div>
+          </div>
+          <div id="statut-result" style="background:white; border-radius:12px; padding:16px; box-shadow:0 2px 12px rgba(0,0,0,0.06); display:flex; align-items:center; justify-content:space-between;">
+            <div>
+              <div style="font-size:13px; font-weight:700;">Omega Seamaster — Marie Dupont</div>
+              <div style="font-size:11px; color:#86868b;">Révision complète — 120€</div>
+            </div>
+            <div id="statut-badge" style="padding:5px 14px; border-radius:20px; font-size:11px; font-weight:700; background:#A8EFC0; color:#1A6E35; border:2px solid #1A6E35;">🟢 Prête</div>
+          </div>
         </div>
 
       </div>
+
+      <!-- INDICATEURS -->
+      <div style="display:flex; justify-content:center; gap:8px; padding-bottom:20px;">
+        <div id="dot-0" style="width:8px; height:8px; border-radius:50%; background:#2E8B4A; transition:all 0.3s;"></div>
+        <div id="dot-1" style="width:8px; height:8px; border-radius:50%; background:rgba(0,0,0,0.15); transition:all 0.3s;"></div>
+        <div id="dot-2" style="width:8px; height:8px; border-radius:50%; background:rgba(0,0,0,0.15); transition:all 0.3s;"></div>
+      </div>
+
     </div>
   </div>
 </div>
 
-<style>
-@keyframes fadeInUp {
-  from { opacity:0; transform:translateY(20px); }
-  to { opacity:1; transform:translateY(0); }
-}
-@keyframes slideIn {
-  from { opacity:0; transform:translateX(-20px); }
-  to { opacity:1; transform:translateX(0); }
-}
-@keyframes pulse {
-  0%, 100% { transform:scale(1); }
-  50% { transform:scale(1.05); }
-}
-.demo-stat { animation-fill-mode: forwards; }
-</style>
-
-<script>
-const demoRepairs = [
-  { ticket:"001", client:"Marie Dupont", montre:"Omega Seamaster", statut:"Prête", prix:"120€", acompte:"50€", bg:"#A8EFC0", color:"#1A6E35" },
-  { ticket:"002", client:"Jean Martin", montre:"Rolex Submariner", statut:"En réparation", prix:"350€", acompte:"150€", bg:"#FFE0B2", color:"#E65100" },
-  { ticket:"003", client:"Sophie Bernard", montre:"Seiko SKX007", statut:"En attente de pièce", prix:"45€", acompte:"", bg:"#FFF176", color:"#F57F00" },
-  { ticket:"004", client:"Pierre Durand", montre:"Tissot T-Classic", statut:"En Atelier", prix:"80€", acompte:"40€", bg:"#BBDEFB", color:"#1565C0" },
-  { ticket:"005", client:"Claire Moreau", montre:"TAG Heuer Aquaracer", statut:"Reçue", prix:"200€", acompte:"", bg:"#FCE4EC", color:"#C2185B" },
-];
-
-function renderDemoTable() {
-  const tbody = document.getElementById('demo-tbody');
-  if (!tbody) return;
-  tbody.innerHTML = '';
-  demoRepairs.forEach((r, i) => {
-    const resteDu = r.acompte ? (parseFloat(r.prix) - parseFloat(r.acompte)).toFixed(0)+"€" : r.prix;
-    const tr = document.createElement('tr');
-    tr.style.cssText = `background:${r.bg}; animation:slideIn 0.4s ease forwards; opacity:0; animation-delay:${0.1*i}s;`;
-    tr.innerHTML = `
-      <td style="padding:10px 16px; font-weight:700; color:#B84A00;">${r.ticket}</td>
-      <td style="padding:10px 16px; font-weight:600; border-bottom:1px solid rgba(0,0,0,0.04);">${r.client}</td>
-      <td style="padding:10px 16px; border-bottom:1px solid rgba(0,0,0,0.04);">${r.montre}</td>
-      <td style="padding:10px 16px; border-bottom:1px solid rgba(0,0,0,0.04);">
-        <span style="padding:3px 10px; border-radius:20px; font-size:10px; font-weight:700; background:${r.bg}; color:${r.color}; border:2px solid ${r.color};">${r.statut}</span>
-      </td>
-      <td style="padding:10px 16px; font-weight:700; color:#1A6E35; border-bottom:1px solid rgba(0,0,0,0.04);">${r.prix}</td>
-      <td style="padding:10px 16px; font-weight:700; color:#A07800; border-bottom:1px solid rgba(0,0,0,0.04);">${r.acompte || "—"}</td>
-    `;
-    tbody.appendChild(tr);
-  });
-}
-
-let currentStatutIndex = 0;
-const statuts = [
-  { label:"Reçue", bg:"#FCE4EC", color:"#C2185B" },
-  { label:"En diagnostic", bg:"#E1BEE7", color:"#6B1E9E" },
-  { label:"En réparation", bg:"#FFE0B2", color:"#E65100" },
-  { label:"En attente de pièce", bg:"#FFF176", color:"#F57F00" },
-  { label:"En Atelier", bg:"#BBDEFB", color:"#1565C0" },
-  { label:"Prête", bg:"#A8EFC0", color:"#1A6E35" },
-  { label:"Rendue", bg:"#FFB8B8", color:"#8B1A1A" },
-];
-
-function animateStatuts() {
-  currentStatutIndex = (currentStatutIndex + 1) % statuts.length;
-  const s = statuts[currentStatutIndex];
-  demoRepairs[0].statut = s.label;
-  demoRepairs[0].bg = s.bg;
-  demoRepairs[0].color = s.color;
-  renderDemoTable();
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  renderDemoTable();
-  setInterval(animateStatuts, 2000);
-});
-</script>
 <!-- PRICING -->
 <div id="tarifs" class="pricing-section">
   <div style="text-align:center; max-width:1200px; margin:0 auto;">
@@ -511,12 +400,8 @@ document.addEventListener('DOMContentLoaded', function() {
     <h2>Essayez gratuitement<br/>pendant 15 jours</h2>
     <p>Téléchargez WatchTrack MontrePro sur PC ou accédez directement à la version Web. Aucune carte bancaire requise.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;">
-      <a href="https://github.com/watchtrack-pro/watchtrack-site/releases/download/V1.1.0/WatchTrack.MontrePro.Setup.0.1.0.exe" class="btn-hero-primary">
-        📥 Télécharger pour Windows
-      </a>
-      <a href="https://app.watchtrack-pro.fr" class="btn-hero-blue">
-        ☁️ Accéder à la version Web
-      </a>
+      <a href="https://github.com/watchtrack-pro/watchtrack-site/releases/download/V1.1.0/WatchTrack.MontrePro.Setup.0.1.0.exe" class="btn-hero-primary">📥 Télécharger pour Windows</a>
+      <a href="https://app.watchtrack-pro.fr" class="btn-hero-blue">☁️ Accéder à la version Web</a>
     </div>
     <p style="font-size:12px; color:#86868b;">Windows 10/11 — Installation en 2 minutes — Données sécurisées</p>
   </div>
@@ -529,12 +414,150 @@ document.addEventListener('DOMContentLoaded', function() {
     <strong style="color:#1d1d1f;">WatchTrack MontrePro</strong>
   </div>
   <p>Logiciel de gestion SAV horlogerie — PC & Web — Conçu pour les horlogers</p>
-  <p style="margin-top:8px;">
-    📧 <a href="mailto:watchtrack.pro@outlook.com">watchtrack.pro@outlook.com</a> —
-    ☁️ <a href="https://app.watchtrack-pro.fr">app.watchtrack-pro.fr</a> —
-    © 2026 WatchTrack MontrePro
-  </p>
+  <p style="margin-top:8px;">📧 <a href="mailto:watchtrack.pro@outlook.com">watchtrack.pro@outlook.com</a> — ☁️ <a href="https://app.watchtrack-pro.fr">app.watchtrack-pro.fr</a> — © 2026 WatchTrack MontrePro</p>
 </footer>
+
+<script>
+const demoRepairs = [
+  { ticket:"001", client:"Marie Dupont", montre:"Omega Seamaster", statut:"Prête", prix:"120€", acompte:"50€", bg:"#A8EFC0", color:"#1A6E35" },
+  { ticket:"002", client:"Jean Martin", montre:"Rolex Submariner", statut:"En réparation", prix:"350€", acompte:"150€", bg:"#FFE0B2", color:"#E65100" },
+  { ticket:"003", client:"Sophie Bernard", montre:"Seiko SKX007", statut:"En attente de pièce", prix:"45€", acompte:"", bg:"#FFF176", color:"#F57F00" },
+  { ticket:"004", client:"Pierre Durand", montre:"Tissot T-Classic", statut:"En Atelier", prix:"80€", acompte:"40€", bg:"#BBDEFB", color:"#1565C0" },
+  { ticket:"005", client:"Claire Moreau", montre:"TAG Heuer", statut:"Reçue", prix:"200€", acompte:"", bg:"#FCE4EC", color:"#C2185B" },
+];
+
+const allStatuts = [
+  { label:"🌸 Reçue", bg:"#FCE4EC", color:"#C2185B" },
+  { label:"🟣 En diagnostic", bg:"#E1BEE7", color:"#6B1E9E" },
+  { label:"🟠 En réparation", bg:"#FFE0B2", color:"#E65100" },
+  { label:"🟡 Attente pièce", bg:"#FFF176", color:"#F57F00" },
+  { label:"🔵 En Atelier", bg:"#BBDEFB", color:"#1565C0" },
+  { label:"🟢 Prête", bg:"#A8EFC0", color:"#1A6E35" },
+  { label:"🔴 Rendue", bg:"#FFB8B8", color:"#8B1A1A" },
+];
+
+const formSteps = [
+  { client:"", montre:"", rep:"" },
+  { client:"Jean Dupont", montre:"", rep:"" },
+  { client:"Jean Dupont", montre:"Rolex Submariner", rep:"" },
+  { client:"Jean Dupont", montre:"Rolex Submariner", rep:"Révision complète" },
+];
+
+let scene = 0;
+let formInterval = null;
+let statutInterval = null;
+
+function renderDemoTable() {
+  const tbody = document.getElementById('demo-tbody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  demoRepairs.forEach((r, i) => {
+    const tr = document.createElement('tr');
+    tr.style.cssText = `background:${r.bg}; animation:slideIn 0.4s ease forwards; opacity:0; animation-delay:${0.08*i}s;`;
+    tr.innerHTML = `
+      <td style="padding:8px 12px; font-weight:700; color:#B84A00;">${r.ticket}</td>
+      <td style="padding:8px 12px; font-weight:600;">${r.client}</td>
+      <td style="padding:8px 12px;">${r.montre}</td>
+      <td style="padding:8px 12px;"><span style="padding:2px 8px; border-radius:20px; font-size:9px; font-weight:700; background:${r.bg}; color:${r.color}; border:1.5px solid ${r.color};">${r.statut}</span></td>
+      <td style="padding:8px 12px; font-weight:700; color:#1A6E35;">${r.prix}</td>
+      <td style="padding:8px 12px; font-weight:700; color:#A07800;">${r.acompte||"—"}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+}
+
+function updateNav() {
+  ['dashboard','form','statuts'].forEach((id, i) => {
+    const el = document.getElementById('nav-'+id);
+    if (el) {
+      el.style.background = i===scene ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.1)';
+      el.style.color = i===scene ? 'white' : 'rgba(255,255,255,0.6)';
+      el.style.fontWeight = i===scene ? '700' : '400';
+    }
+  });
+  for(let i=0;i<3;i++) {
+    const dot = document.getElementById('dot-'+i);
+    if(dot) dot.style.background = i===scene ? '#2E8B4A' : 'rgba(0,0,0,0.15)';
+  }
+}
+
+function showScene(s) {
+  scene = s;
+  clearInterval(formInterval);
+  clearInterval(statutInterval);
+
+  document.getElementById('demo-dashboard').style.display = 'none';
+  document.getElementById('demo-form').style.display = 'none';
+  document.getElementById('demo-statuts').style.display = 'none';
+
+  if (s === 0) {
+    document.getElementById('demo-dashboard').style.display = 'block';
+    document.getElementById('demo-title').textContent = '📊 Tableau de bord en temps réel';
+    document.getElementById('demo-subtitle').textContent = 'Visualisez toutes vos réparations et votre CA en un coup d\'œil';
+    renderDemoTable();
+  } else if (s === 1) {
+    document.getElementById('demo-form').style.display = 'block';
+    document.getElementById('demo-title').textContent = '➕ Saisie rapide d\'une réparation';
+    document.getElementById('demo-subtitle').textContent = 'Enregistrez une montre en moins de 30 secondes';
+    let step = 0;
+    document.getElementById('demo-client').value = '';
+    document.getElementById('demo-montre').value = '';
+    document.getElementById('demo-rep').value = '';
+    formInterval = setInterval(() => {
+      step++;
+      if (step >= formSteps.length) {
+        clearInterval(formInterval);
+        const btn = document.getElementById('demo-save-btn');
+        if(btn) { btn.style.transform='scale(1.05)'; btn.style.boxShadow='0 8px 24px rgba(46,139,74,0.5)'; }
+        return;
+      }
+      const fs = formSteps[step];
+      document.getElementById('demo-client').value = fs.client;
+      document.getElementById('demo-montre').value = fs.montre;
+      document.getElementById('demo-rep').value = fs.rep;
+    }, 900);
+  } else if (s === 2) {
+    document.getElementById('demo-statuts').style.display = 'block';
+    document.getElementById('demo-title').textContent = '🎨 7 statuts colorés';
+    document.getElementById('demo-subtitle').textContent = 'Changez le statut en 1 clic — visible instantanément';
+    let si = 4;
+    const cards = document.querySelectorAll('.statut-card');
+    function highlightStatut(idx) {
+      cards.forEach(c => { c.style.transform='scale(1)'; c.style.boxShadow='none'; });
+      if(cards[idx]) { cards[idx].style.transform='scale(1.08)'; cards[idx].style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'; }
+      const badge = document.getElementById('statut-badge');
+      if(badge && allStatuts[idx]) {
+        badge.textContent = allStatuts[idx].label;
+        badge.style.background = allStatuts[idx].bg;
+        badge.style.color = allStatuts[idx].color;
+        badge.style.borderColor = allStatuts[idx].color;
+      }
+    }
+    highlightStatut(si);
+    statutInterval = setInterval(() => {
+      si = (si + 1) % allStatuts.length;
+      highlightStatut(si);
+    }, 900);
+
+    cards.forEach((card, idx) => {
+      card.onclick = () => {
+        clearInterval(statutInterval);
+        highlightStatut(idx);
+      };
+    });
+  }
+  updateNav();
+}
+
+function nextScene() {
+  showScene((scene + 1) % 3);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  showScene(0);
+  setInterval(nextScene, 6000);
+});
+</script>
 
 </body>
 </html>
