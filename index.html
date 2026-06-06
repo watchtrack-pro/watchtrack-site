@@ -60,13 +60,14 @@
     .web-feature-icon { width: 44px; height: 44px; background: rgba(0,122,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
 
     .pricing-section { padding: 100px 40px; }
-    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; max-width: 1100px; margin: 0 auto; }
     .pricing-card { background: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.8); border-radius: 24px; padding: 40px; text-align: center; transition: all 0.3s; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
     .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
     .pricing-card.featured { background: linear-gradient(135deg, rgba(52,199,89,0.08), rgba(46,139,74,0.04)); border-color: rgba(52,199,89,0.3); position: relative; box-shadow: 0 8px 32px rgba(52,199,89,0.15); }
     .pricing-card.featured::before { content: '⭐ POPULAIRE'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #34C759, #2E8B4A); color: white; padding: 4px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 12px rgba(46,139,74,0.4); }
     .pricing-card.web-card { background: linear-gradient(135deg, rgba(0,122,255,0.06), rgba(0,81,213,0.02)); border-color: rgba(0,122,255,0.3); position: relative; box-shadow: 0 8px 32px rgba(0,122,255,0.1); }
     .pricing-card.web-card::before { content: '☁️ WEB'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #007AFF, #0051D5); color: white; padding: 4px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,122,255,0.4); }
+    .pricing-card.pack-card { background: linear-gradient(135deg, rgba(175,82,222,0.06), rgba(139,61,184,0.02)); border-color: rgba(175,82,222,0.3); position: relative; box-shadow: 0 8px 32px rgba(175,82,222,0.1); }
+    .pricing-card.pack-card::before { content: '🏪 RÉSEAU'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #AF52DE, #8B3DB8); color: white; padding: 4px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 12px rgba(175,82,222,0.4); }
     .pricing-icon { font-size: 40px; margin-bottom: 16px; }
     .pricing-price { font-size: 48px; font-weight: 800; letter-spacing: -2px; margin-bottom: 4px; color: #1d1d1f; }
     .pricing-period { font-size: 14px; color: #86868b; margin-bottom: 24px; }
@@ -78,8 +79,16 @@
     .btn-pricing-green:hover { box-shadow: 0 8px 28px rgba(46,139,74,0.5); transform: translateY(-2px); }
     .btn-pricing-blue { background: linear-gradient(135deg, #007AFF, #0051D5); color: white; box-shadow: 0 4px 16px rgba(0,122,255,0.35); }
     .btn-pricing-blue:hover { box-shadow: 0 8px 28px rgba(0,122,255,0.5); transform: translateY(-2px); }
+    .btn-pricing-purple { background: linear-gradient(135deg, #AF52DE, #8B3DB8); color: white; box-shadow: 0 4px 16px rgba(175,82,222,0.35); }
+    .btn-pricing-purple:hover { box-shadow: 0 8px 28px rgba(175,82,222,0.5); transform: translateY(-2px); }
     .btn-pricing-outline { background: rgba(0,0,0,0.04); color: #1d1d1f; border: 1.5px solid rgba(0,0,0,0.1) !important; }
     .btn-pricing-outline:hover { background: rgba(0,0,0,0.07); }
+
+    .pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    .pack-card-mini { background: rgba(255,255,255,0.9); border: 1px solid rgba(175,82,222,0.2); border-radius: 20px; padding: 28px 20px; text-align: center; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: relative; }
+    .pack-card-mini:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(175,82,222,0.15); border-color: rgba(175,82,222,0.4); }
+    .pack-card-mini.best { background: linear-gradient(135deg, rgba(175,82,222,0.08), rgba(139,61,184,0.04)); border-color: rgba(175,82,222,0.4); }
+    .pack-card-mini.best::before { content: '⭐ MEILLEUR PRIX'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #AF52DE, #8B3DB8); color: white; padding: 3px 12px; border-radius: 20px; font-size: 10px; font-weight: 700; white-space: nowrap; }
 
     .trial-section { padding: 80px 40px; text-align: center; }
     .trial-box { background: rgba(255,255,255,0.9); border: 1px solid rgba(52,199,89,0.2); border-radius: 28px; padding: 60px 40px; max-width: 680px; margin: 0 auto; box-shadow: 0 8px 40px rgba(52,199,89,0.1), 0 4px 24px rgba(0,0,0,0.06); }
@@ -96,7 +105,7 @@
     .statut-card { transition: all 0.3s; }
 
     @media (max-width: 768px) {
-      .pricing-grid { grid-template-columns: 1fr; }
+      .pack-grid { grid-template-columns: 1fr 1fr; }
       .web-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 24px; }
       header { padding: 0 20px; }
@@ -119,6 +128,7 @@
   <div class="header-btns">
     <a href="#fonctionnalites" class="btn-outline">Fonctionnalités</a>
     <a href="#tarifs" class="btn-outline">Tarifs</a>
+    <a href="#reseau" class="btn-outline">Pack Réseau</a>
     <a href="https://app.watchtrack-pro.fr" class="btn-blue">☁️ Connexion Web</a>
     <a href="#essai" class="btn-green">Essai gratuit 15 jours</a>
   </div>
@@ -133,13 +143,13 @@
     <div class="hero-btns">
       <a href="#essai" class="btn-hero-primary">📥 Télécharger gratuitement</a>
       <a href="https://app.watchtrack-pro.fr" class="btn-hero-blue">☁️ Version Web</a>
-      <a href="#fonctionnalites" class="btn-hero-secondary">Voir les fonctionnalités →</a>
+      <a href="#reseau" class="btn-hero-secondary">🏪 Pack Réseau →</a>
     </div>
     <div class="hero-stats">
       <div style="text-align:center;"><div class="hero-stat-val">15j</div><div class="hero-stat-label">Essai gratuit</div></div>
-      <div style="text-align:center;"><div class="hero-stat-val">2min</div><div class="hero-stat-label">Installation</div></div>
       <div style="text-align:center;"><div class="hero-stat-val">19,90€</div><div class="hero-stat-label">PC / mois</div></div>
       <div style="text-align:center;"><div class="hero-stat-val">34,90€</div><div class="hero-stat-label">Web / mois</div></div>
+      <div style="text-align:center;"><div class="hero-stat-val">199€</div><div class="hero-stat-label">Pack 5 boutiques</div></div>
     </div>
   </div>
 </section>
@@ -161,7 +171,7 @@
       <div class="feature-card"><div class="feature-icon">⚠️</div><div class="feature-title">Alertes automatiques</div><div class="feature-desc">Notification si un article reste plus d'1 mois en atelier. Ne perdez plus aucune réparation.</div></div>
       <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Tableau de bord</div><div class="feature-desc">Vue d'ensemble : articles en cours, prêts à rendre, en attente de pièce, CA encaissé et acomptes reçus.</div></div>
       <div class="feature-card"><div class="feature-icon">☁️</div><div class="feature-title">Version Web</div><div class="feature-desc">Accédez à vos réparations depuis n'importe quel navigateur. Données sauvegardées dans le cloud automatiquement.</div></div>
-      <div class="feature-card"><div class="feature-icon">💾</div><div class="feature-title">Sauvegarde & Restauration</div><div class="feature-desc">Sauvegardez vos données en 1 clic et restaurez-les en cas de panne. Compatible OneDrive.</div></div>
+      <div class="feature-card"><div class="feature-icon">🏪</div><div class="feature-title">Pack Multi-boutiques</div><div class="feature-desc">Gérez plusieurs boutiques depuis un seul compte manager. Vue globale du réseau en temps réel.</div></div>
       <div class="feature-card"><div class="feature-icon">🔐</div><div class="feature-title">Licence sécurisée</div><div class="feature-desc">Chaque licence est liée à votre ordinateur uniquement. Vos données restent privées et protégées.</div></div>
     </div>
   </div>
@@ -198,7 +208,7 @@
         <div class="web-feature"><div class="web-feature-icon">🔐</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Compte sécurisé</div><div style="font-size:14px; color:#86868b; line-height:1.6;">Connexion par email et mot de passe. Vos données sont séparées et privées.</div></div></div>
         <div class="web-feature"><div class="web-feature-icon">💰</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Acomptes & reste dû</div><div style="font-size:14px; color:#86868b; line-height:1.6;">Toutes les fonctionnalités disponibles incluant le suivi des acomptes et du reste dû.</div></div></div>
         <div class="web-feature"><div class="web-feature-icon">📱</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Accessible partout</div><div style="font-size:14px; color:#86868b; line-height:1.6;">PC, Mac, tablette, smartphone — accédez à votre atelier depuis n'importe où.</div></div></div>
-        <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="margin-top:32px;">
           <a href="https://app.watchtrack-pro.fr" class="btn-hero-blue" style="display:inline-flex;">☁️ Essayer gratuitement 15 jours</a>
         </div>
       </div>
@@ -223,6 +233,79 @@
           <div style="font-size:13px; color:#1d1d1f;">📋 Reste dû total : <strong style="color:#B84A00;">1 250€</strong></div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- PACK RESEAU -->
+<div id="reseau" style="padding:100px 40px; background:linear-gradient(135deg, rgba(175,82,222,0.04), rgba(139,61,184,0.02)); border-top:1px solid rgba(0,0,0,0.06);">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:56px;">
+      <div style="font-size:11px; font-weight:700; color:#AF52DE; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">Pack Réseau</div>
+      <h2 class="section-title" style="text-align:center;">Gérez tout votre réseau de boutiques</h2>
+      <p style="text-align:center; color:#86868b; font-size:17px; max-width:620px; margin:0 auto 16px;">Un seul abonnement pour toutes vos boutiques. Chaque boutique accède à la Version Web et le manager dispose d'une vue globale sur tout le réseau.</p>
+      <div style="display:inline-flex; align-items:center; gap:20px; padding:16px 32px; background:rgba(175,82,222,0.08); border:1px solid rgba(175,82,222,0.2); border-radius:20px; margin-top:16px;">
+        <div style="text-align:center;"><div style="font-size:20px; font-weight:800; color:#AF52DE;">✅</div><div style="font-size:12px; color:#86868b;">Vue globale réseau</div></div>
+        <div style="width:1px; height:40px; background:rgba(175,82,222,0.2);"></div>
+        <div style="text-align:center;"><div style="font-size:20px; font-weight:800; color:#AF52DE;">📊</div><div style="font-size:12px; color:#86868b;">Stats par boutique</div></div>
+        <div style="width:1px; height:40px; background:rgba(175,82,222,0.2);"></div>
+        <div style="text-align:center;"><div style="font-size:20px; font-weight:800; color:#AF52DE;">💰</div><div style="font-size:12px; color:#86868b;">CA consolidé</div></div>
+        <div style="width:1px; height:40px; background:rgba(175,82,222,0.2);"></div>
+        <div style="text-align:center;"><div style="font-size:20px; font-weight:800; color:#AF52DE;">🔐</div><div style="font-size:12px; color:#86868b;">Données séparées</div></div>
+      </div>
+    </div>
+
+    <div class="pack-grid">
+      <div class="pack-card-mini">
+        <div style="font-size:32px; margin-bottom:12px;">🏪🏪🏪</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PACK 3 BOUTIQUES</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">129€</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">par mois</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">43€ / boutique</div>
+        <a href="https://buy.stripe.com/8x200jbOY7NUcvTcEi6g80a" class="btn-pricing btn-pricing-purple">Choisir ce pack</a>
+      </div>
+
+      <div class="pack-card-mini best">
+        <div style="font-size:32px; margin-bottom:12px;">🏪🏪🏪🏪🏪</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PACK 5 BOUTIQUES</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">199€</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">par mois</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">39,80€ / boutique</div>
+        <a href="https://buy.stripe.com/7sYaEX5qA9W253r1ZE6g80b" class="btn-pricing btn-pricing-purple">Choisir ce pack</a>
+      </div>
+
+      <div class="pack-card-mini">
+        <div style="font-size:32px; margin-bottom:12px;">🏪×10</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PACK 10 BOUTIQUES</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">349€</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">par mois</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">34,90€ / boutique</div>
+        <a href="https://buy.stripe.com/8x24gz6uE0lsdzXfQu6g80c" class="btn-pricing btn-pricing-purple">Choisir ce pack</a>
+      </div>
+
+      <div class="pack-card-mini">
+        <div style="font-size:32px; margin-bottom:12px;">🏪×25</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PACK 25 BOUTIQUES</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">699€</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">par mois</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">27,96€ / boutique</div>
+        <a href="https://buy.stripe.com/dRmbJ11ak3xEdzX9s66g80d" class="btn-pricing btn-pricing-purple">Choisir ce pack</a>
+      </div>
+
+      <div class="pack-card-mini">
+        <div style="font-size:32px; margin-bottom:12px;">🏪×50</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PACK 50 BOUTIQUES</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">999€</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">par mois</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">19,98€ / boutique</div>
+        <a href="https://buy.stripe.com/7sY28r8CMc4a0Nb0VA6g80e" class="btn-pricing btn-pricing-purple">Choisir ce pack</a>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px; padding:24px; background:rgba(175,82,222,0.06); border-radius:16px; border:1px solid rgba(175,82,222,0.15); max-width:700px; margin:40px auto 0;">
+      <div style="font-size:15px; font-weight:700; color:#1d1d1f; margin-bottom:8px;">🏪 Vous avez plus de 50 boutiques ?</div>
+      <div style="font-size:14px; color:#86868b; margin-bottom:16px;">Contactez-nous pour un tarif personnalisé adapté à votre réseau.</div>
+      <a href="mailto:watchtrack.pro@outlook.com" style="padding:12px 28px; background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; border-radius:12px; font-size:13px; font-weight:700; text-decoration:none; display:inline-block;">📧 Nous contacter</a>
     </div>
   </div>
 </div>
@@ -333,12 +416,11 @@
     <h2 class="section-title" style="text-align:center; margin-bottom:16px;">Simple et transparent</h2>
     <p style="text-align:center; color:#86868b; font-size:17px; margin-bottom:56px;">15 jours d'essai gratuit — aucune carte bancaire requise</p>
 
-    <!-- TITRE PC -->
     <div style="text-align:left; max-width:1100px; margin:0 auto 16px;">
       <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(52,199,89,0.1); border:1px solid rgba(52,199,89,0.25); border-radius:20px; font-size:12px; font-weight:700; color:#2E8B4A;">💻 Logiciel PC Windows</div>
     </div>
 
-    <div class="pricing-grid" style="max-width:780px; margin:0 auto 48px; grid-template-columns:1fr 1fr;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:780px; margin:0 auto 48px;">
       <div class="pricing-card featured">
         <div class="pricing-icon">🔄</div>
         <div class="pricing-price" style="color:#2E8B4A;">19,90€</div>
@@ -369,12 +451,11 @@
       </div>
     </div>
 
-    <!-- TITRE WEB -->
     <div style="text-align:left; max-width:600px; margin:0 auto 16px;">
-      <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(0,122,255,0.1); border:1px solid rgba(0,122,255,0.25); border-radius:20px; font-size:12px; font-weight:700; color:#007AFF;">☁️ Version Web — Accès partout</div>
+      <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(0,122,255,0.1); border:1px solid rgba(0,122,255,0.25); border-radius:20px; font-size:12px; font-weight:700; color:#007AFF;">☁️ Version Web — Boutique individuelle</div>
     </div>
 
-    <div style="max-width:500px; margin:0 auto;">
+    <div style="max-width:500px; margin:0 auto 48px;">
       <div class="pricing-card web-card">
         <div class="pricing-icon">☁️</div>
         <div class="pricing-price" style="color:#007AFF;">34,90€</div>
@@ -389,6 +470,55 @@
         </ul>
         <a href="https://buy.stripe.com/bJedR9f1a7NU1Rf9s66g809" class="btn-pricing btn-pricing-blue">S'abonner — Version Web</a>
       </div>
+    </div>
+
+    <div style="text-align:left; max-width:1100px; margin:0 auto 16px;">
+      <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(175,82,222,0.1); border:1px solid rgba(175,82,222,0.25); border-radius:20px; font-size:12px; font-weight:700; color:#AF52DE;">🏪 Pack Réseau — Plusieurs boutiques</div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(5,1fr); gap:16px; max-width:1100px; margin:0 auto;">
+      <div style="background:rgba(255,255,255,0.9); border:1px solid rgba(175,82,222,0.2); border-radius:16px; padding:20px; text-align:center; transition:all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="font-size:11px; font-weight:700; color:#86868b; margin-bottom:8px;">3 BOUTIQUES</div>
+        <div style="font-size:28px; font-weight:800; color:#AF52DE; margin-bottom:2px;">129€</div>
+        <div style="font-size:11px; color:#86868b; margin-bottom:4px;">/mois</div>
+        <div style="font-size:10px; color:#AF52DE; font-weight:700; margin-bottom:16px;">43€/boutique</div>
+        <a href="https://buy.stripe.com/8x200jbOY7NUcvTcEi6g80a" style="display:block; padding:10px; background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; border-radius:10px; font-size:12px; font-weight:700; text-decoration:none;">Choisir</a>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(175,82,222,0.08),rgba(139,61,184,0.04)); border:2px solid rgba(175,82,222,0.4); border-radius:16px; padding:20px; text-align:center; position:relative; transition:all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; padding:2px 12px; border-radius:20px; font-size:10px; font-weight:700; white-space:nowrap;">⭐ POPULAIRE</div>
+        <div style="font-size:11px; font-weight:700; color:#86868b; margin-bottom:8px;">5 BOUTIQUES</div>
+        <div style="font-size:28px; font-weight:800; color:#AF52DE; margin-bottom:2px;">199€</div>
+        <div style="font-size:11px; color:#86868b; margin-bottom:4px;">/mois</div>
+        <div style="font-size:10px; color:#AF52DE; font-weight:700; margin-bottom:16px;">39,80€/boutique</div>
+        <a href="https://buy.stripe.com/7sYaEX5qA9W253r1ZE6g80b" style="display:block; padding:10px; background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; border-radius:10px; font-size:12px; font-weight:700; text-decoration:none;">Choisir</a>
+      </div>
+      <div style="background:rgba(255,255,255,0.9); border:1px solid rgba(175,82,222,0.2); border-radius:16px; padding:20px; text-align:center; transition:all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="font-size:11px; font-weight:700; color:#86868b; margin-bottom:8px;">10 BOUTIQUES</div>
+        <div style="font-size:28px; font-weight:800; color:#AF52DE; margin-bottom:2px;">349€</div>
+        <div style="font-size:11px; color:#86868b; margin-bottom:4px;">/mois</div>
+        <div style="font-size:10px; color:#AF52DE; font-weight:700; margin-bottom:16px;">34,90€/boutique</div>
+        <a href="https://buy.stripe.com/8x24gz6uE0lsdzXfQu6g80c" style="display:block; padding:10px; background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; border-radius:10px; font-size:12px; font-weight:700; text-decoration:none;">Choisir</a>
+      </div>
+      <div style="background:rgba(255,255,255,0.9); border:1px solid rgba(175,82,222,0.2); border-radius:16px; padding:20px; text-align:center; transition:all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="font-size:11px; font-weight:700; color:#86868b; margin-bottom:8px;">25 BOUTIQUES</div>
+        <div style="font-size:28px; font-weight:800; color:#AF52DE; margin-bottom:2px;">699€</div>
+        <div style="font-size:11px; color:#86868b; margin-bottom:4px;">/mois</div>
+        <div style="font-size:10px; color:#AF52DE; font-weight:700; margin-bottom:16px;">27,96€/boutique</div>
+        <a href="https://buy.stripe.com/dRmbJ11ak3xEdzX9s66g80d" style="display:block; padding:10px; background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; border-radius:10px; font-size:12px; font-weight:700; text-decoration:none;">Choisir</a>
+      </div>
+      <div style="background:rgba(255,255,255,0.9); border:1px solid rgba(175,82,222,0.2); border-radius:16px; padding:20px; text-align:center; transition:all 0.3s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="font-size:11px; font-weight:700; color:#86868b; margin-bottom:8px;">50 BOUTIQUES</div>
+        <div style="font-size:28px; font-weight:800; color:#AF52DE; margin-bottom:2px;">999€</div>
+        <div style="font-size:11px; color:#86868b; margin-bottom:4px;">/mois</div>
+        <div style="font-size:10px; color:#AF52DE; font-weight:700; margin-bottom:16px;">19,98€/boutique</div>
+        <a href="https://buy.stripe.com/7sY28r8CMc4a0Nb0VA6g80e" style="display:block; padding:10px; background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; border-radius:10px; font-size:12px; font-weight:700; text-decoration:none;">Choisir</a>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:24px; padding:20px; background:rgba(175,82,222,0.06); border-radius:14px; border:1px solid rgba(175,82,222,0.15); max-width:600px; margin:24px auto 0;">
+      <div style="font-size:14px; font-weight:700; color:#1d1d1f; margin-bottom:6px;">🏪 Plus de 50 boutiques ?</div>
+      <div style="font-size:13px; color:#86868b; margin-bottom:12px;">Contactez-nous pour un tarif personnalisé.</div>
+      <a href="mailto:watchtrack.pro@outlook.com" style="padding:10px 24px; background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; border-radius:10px; font-size:13px; font-weight:700; text-decoration:none; display:inline-block;">📧 Nous contacter</a>
     </div>
 
     <p style="color:#86868b; font-size:13px; margin-top:28px;">💳 Paiement sécurisé par Stripe — 📧 Support : <a href="mailto:watchtrack.pro@outlook.com" style="color:#2E8B4A;">watchtrack.pro@outlook.com</a></p>
@@ -427,7 +557,6 @@ const demoRepairs = [
   { ticket:"004", client:"Pierre Durand", montre:"Tissot T-Classic", statut:"En Atelier", prix:"80€", acompte:"40€", bg:"#BBDEFB", color:"#1565C0" },
   { ticket:"005", client:"Claire Moreau", montre:"TAG Heuer", statut:"Reçue", prix:"200€", acompte:"", bg:"#FCE4EC", color:"#C2185B" },
 ];
-
 const allStatuts = [
   { label:"🌸 Reçue", bg:"#FCE4EC", color:"#C2185B" },
   { label:"🟣 En diagnostic", bg:"#E1BEE7", color:"#6B1E9E" },
@@ -437,18 +566,13 @@ const allStatuts = [
   { label:"🟢 Prête", bg:"#A8EFC0", color:"#1A6E35" },
   { label:"🔴 Rendue", bg:"#FFB8B8", color:"#8B1A1A" },
 ];
-
 const formSteps = [
   { client:"", montre:"", rep:"" },
   { client:"Jean Dupont", montre:"", rep:"" },
   { client:"Jean Dupont", montre:"Rolex Submariner", rep:"" },
   { client:"Jean Dupont", montre:"Rolex Submariner", rep:"Révision complète" },
 ];
-
-let scene = 0;
-let formInterval = null;
-let statutInterval = null;
-
+let scene = 0, formInterval = null, statutInterval = null;
 function renderDemoTable() {
   const tbody = document.getElementById('demo-tbody');
   if (!tbody) return;
@@ -456,37 +580,19 @@ function renderDemoTable() {
   demoRepairs.forEach((r, i) => {
     const tr = document.createElement('tr');
     tr.style.cssText = `background:${r.bg}; animation:slideIn 0.4s ease forwards; opacity:0; animation-delay:${0.08*i}s;`;
-    tr.innerHTML = `
-      <td style="padding:8px 12px; font-weight:700; color:#B84A00;">${r.ticket}</td>
-      <td style="padding:8px 12px; font-weight:600;">${r.client}</td>
-      <td style="padding:8px 12px;">${r.montre}</td>
-      <td style="padding:8px 12px;"><span style="padding:2px 8px; border-radius:20px; font-size:9px; font-weight:700; background:${r.bg}; color:${r.color}; border:1.5px solid ${r.color};">${r.statut}</span></td>
-      <td style="padding:8px 12px; font-weight:700; color:#1A6E35;">${r.prix}</td>
-      <td style="padding:8px 12px; font-weight:700; color:#A07800;">${r.acompte||"—"}</td>
-    `;
+    tr.innerHTML = `<td style="padding:8px 12px; font-weight:700; color:#B84A00;">${r.ticket}</td><td style="padding:8px 12px; font-weight:600;">${r.client}</td><td style="padding:8px 12px;">${r.montre}</td><td style="padding:8px 12px;"><span style="padding:2px 8px; border-radius:20px; font-size:9px; font-weight:700; background:${r.bg}; color:${r.color}; border:1.5px solid ${r.color};">${r.statut}</span></td><td style="padding:8px 12px; font-weight:700; color:#1A6E35;">${r.prix}</td><td style="padding:8px 12px; font-weight:700; color:#A07800;">${r.acompte||"—"}</td>`;
     tbody.appendChild(tr);
   });
 }
-
 function updateNav() {
   ['dashboard','form','statuts'].forEach((id, i) => {
     const el = document.getElementById('nav-'+id);
-    if (el) {
-      el.style.background = i===scene ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.1)';
-      el.style.color = i===scene ? 'white' : 'rgba(255,255,255,0.6)';
-      el.style.fontWeight = i===scene ? '700' : '400';
-    }
+    if (el) { el.style.background = i===scene ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.1)'; el.style.color = i===scene ? 'white' : 'rgba(255,255,255,0.6)'; el.style.fontWeight = i===scene ? '700' : '400'; }
   });
-  for(let i=0;i<3;i++) {
-    const dot = document.getElementById('dot-'+i);
-    if(dot) dot.style.background = i===scene ? '#2E8B4A' : 'rgba(0,0,0,0.15)';
-  }
+  for(let i=0;i<3;i++) { const dot = document.getElementById('dot-'+i); if(dot) dot.style.background = i===scene ? '#2E8B4A' : 'rgba(0,0,0,0.15)'; }
 }
-
 function showScene(s) {
-  scene = s;
-  clearInterval(formInterval);
-  clearInterval(statutInterval);
+  scene = s; clearInterval(formInterval); clearInterval(statutInterval);
   document.getElementById('demo-dashboard').style.display = 'none';
   document.getElementById('demo-form').style.display = 'none';
   document.getElementById('demo-statuts').style.display = 'none';
@@ -505,12 +611,7 @@ function showScene(s) {
     document.getElementById('demo-rep').value = '';
     formInterval = setInterval(() => {
       step++;
-      if (step >= formSteps.length) {
-        clearInterval(formInterval);
-        const btn = document.getElementById('demo-save-btn');
-        if(btn) { btn.style.transform='scale(1.05)'; btn.style.boxShadow='0 8px 24px rgba(46,139,74,0.5)'; }
-        return;
-      }
+      if (step >= formSteps.length) { clearInterval(formInterval); const btn = document.getElementById('demo-save-btn'); if(btn) { btn.style.transform='scale(1.05)'; btn.style.boxShadow='0 8px 24px rgba(46,139,74,0.5)'; } return; }
       const fs = formSteps[step];
       document.getElementById('demo-client').value = fs.client;
       document.getElementById('demo-montre').value = fs.montre;
@@ -526,12 +627,7 @@ function showScene(s) {
       cards.forEach(c => { c.style.transform='scale(1)'; c.style.boxShadow='none'; });
       if(cards[idx]) { cards[idx].style.transform='scale(1.08)'; cards[idx].style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'; }
       const badge = document.getElementById('statut-badge');
-      if(badge && allStatuts[idx]) {
-        badge.textContent = allStatuts[idx].label;
-        badge.style.background = allStatuts[idx].bg;
-        badge.style.color = allStatuts[idx].color;
-        badge.style.borderColor = allStatuts[idx].color;
-      }
+      if(badge && allStatuts[idx]) { badge.textContent = allStatuts[idx].label; badge.style.background = allStatuts[idx].bg; badge.style.color = allStatuts[idx].color; badge.style.borderColor = allStatuts[idx].color; }
     }
     highlightStatut(si);
     statutInterval = setInterval(() => { si = (si + 1) % allStatuts.length; highlightStatut(si); }, 900);
@@ -539,13 +635,8 @@ function showScene(s) {
   }
   updateNav();
 }
-
 function nextScene() { showScene((scene + 1) % 3); }
-
-document.addEventListener('DOMContentLoaded', function() {
-  showScene(0);
-  setInterval(nextScene, 6000);
-});
+document.addEventListener('DOMContentLoaded', function() { showScene(0); setInterval(nextScene, 6000); });
 </script>
 </body>
 </html>
