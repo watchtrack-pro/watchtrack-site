@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="WatchTrack MontrePro : le logiciel de suivi SAV pour horlogers, bijoutiers et cordonniers. Suivi des reparations, acomptes, factures PDF, notifications client. Essai gratuit 15 jours, sans carte bancaire.">
+<meta name="description" content="WatchTrack MontrePro : le logiciel de suivi SAV pour horlogers, bijoutiers et cordonniers. Suivi des reparations, acomptes, devis, factures, avoirs et bons de livraison, notifications client. Essai gratuit 15 jours, sans carte bancaire.">
 <link rel="canonical" href="https://watchtrack-pro.fr/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://watchtrack-pro.fr/">
@@ -123,6 +123,10 @@
       header { padding: 0 20px; }
       .header-btns .btn-outline { display: none; }
       .section { padding: 60px 20px; }
+      [style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+      [style*="grid-template-columns:repeat(6,1fr)"] { grid-template-columns: repeat(3, 1fr) !important; }
+      [style*="display:inline-flex; align-items:center; gap:20px"] { flex-wrap: wrap; justify-content: center; gap: 12px !important; padding: 14px 16px !important; }
+      div:has(> table) { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
     }
   </style>
 </head>
@@ -178,7 +182,8 @@
       <div class="feature-card"><div class="feature-icon">🗂️</div><div class="feature-title">Multi-catégories</div><div class="feature-desc">Gérez montres, clés, tampons, télécommandes, clés de voiture et bien plus dans un seul logiciel.</div></div>
       <div class="feature-card"><div class="feature-icon">💰</div><div class="feature-title">Acompte client</div><div class="feature-desc">Enregistrez l'acompte reçu et suivez le reste dû automatiquement. Visible sur le bon de dépôt et la facture.</div></div>
       <div class="feature-card new-feature"><div class="feature-icon new">🖨️</div><div class="feature-title">Impression directe <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Imprimez le bon de dépôt directement sur votre imprimante en 1 clic — plus besoin de télécharger un PDF.</div></div>
-      <div class="feature-card"><div class="feature-icon">📄</div><div class="feature-title">Factures PDF</div><div class="feature-desc">Factures professionnelles avec TVA 20%, acompte déduit, numérotation automatique et coordonnées atelier.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">📄</div><div class="feature-title">Devis, factures &amp; avoirs <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Devis numérotés, transformés en facture en 1 clic. Factures conformes : TVA 20&nbsp;% ou franchise (art. 293 B), mentions légales à cocher, numérotation continue sans doublon. Une erreur ? Un avoir l'annule proprement. (Version Web)</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">📦</div><div class="feature-title">Bons de livraison <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Plusieurs articles ou prestations par bon, avec ou sans les prix, et zone de signature. Transformez un bon en facture en 1 clic. (Version Web)</div></div>
       <div class="feature-card new-feature"><div class="feature-icon new">📱</div><div class="feature-title">WhatsApp intégré <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Envoyez un message WhatsApp à votre client en 1 clic pour l'informer que sa montre est prête.</div></div>
       <div class="feature-card new-feature"><div class="feature-icon new">📈</div><div class="feature-title">Graphiques & Stats <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Visualisez votre CA mensuel, la répartition par catégorie et les statuts en cours sous forme de graphiques.</div></div>
       <div class="feature-card new-feature"><div class="feature-icon new">📅</div><div class="feature-title">Calendrier <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Vue calendrier de toutes vos réparations. Visualisez les dépôts et rendus par jour, semaine ou mois.</div></div>
@@ -187,6 +192,11 @@
       <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Tableau de bord</div><div class="feature-desc">Vue d'ensemble : articles en cours, prêts à rendre, en attente de pièce, CA encaissé et acomptes reçus.</div></div>
       <div class="feature-card"><div class="feature-icon">☁️</div><div class="feature-title">Version Web</div><div class="feature-desc">Accédez à vos réparations depuis n'importe quel navigateur. Données sauvegardées dans le cloud automatiquement.</div></div>
       <div class="feature-card"><div class="feature-icon">🏪</div><div class="feature-title">Pack Multi-boutiques</div><div class="feature-desc">Gérez plusieurs boutiques depuis un seul compte manager. Vue globale du réseau en temps réel.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">🗂️</div><div class="feature-title">Onglet Documents <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Tous vos devis, factures, avoirs et bons de livraison au même endroit : filtres par période, client ou statut, totaux HT / TVA / TTC, reste à encaisser et export Excel pour votre comptable. (Version Web)</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">🎁</div><div class="feature-title">Carte de fidélité reliée <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Avec Ancrimo, votre client est prévenu par SMS quand sa réparation est prête (après votre vérification), suit ses réparations sur sa carte et gagne son point au retrait, automatiquement. (Version Web)</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">📲</div><div class="feature-title">Sur téléphone et tablette <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Une mise en page pensée pour le téléphone et la tablette : enregistrez, cherchez et rendez une réparation directement au comptoir. (Version Web)</div></div>
+      <div class="feature-card"><div class="feature-icon">✍️</div><div class="feature-title">Qui a pris, qui a rendu</div><div class="feature-desc">Les initiales du vendeur à la prise en charge et au rendu, avec la date de rendu : vous savez toujours qui a fait quoi.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">🏷️</div><div class="feature-title">Mon Atelier, partout <span class="new-badge">NOUVEAU</span></div><div class="feature-desc">Nom, adresse, SIRET, TVA et mentions de votre atelier : saisis une seule fois, retrouvés sur tous vos appareils et sur tous vos documents. (Version Web)</div></div>
       <div class="feature-card"><div class="feature-icon">🔐</div><div class="feature-title">Licence sécurisée</div><div class="feature-desc">Chaque licence est liée à votre ordinateur uniquement. Vos données restent privées et protégées.</div></div>
     </div>
   </div>
@@ -200,24 +210,24 @@
     <p style="text-align:center; color:#86868b; font-size:17px; max-width:580px; margin:0 auto 48px;">Mises à jour régulières incluses dans votre abonnement</p>
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px; max-width:1000px; margin:0 auto;">
       <div style="background:white; border-radius:20px; padding:28px; text-align:left; box-shadow:0 4px 20px rgba(52,199,89,0.1); border:1px solid rgba(52,199,89,0.2);">
-        <div style="width:50px; height:50px; background:linear-gradient(135deg,#25D366,#128C7E); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">📱</div>
-        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">WhatsApp en 1 clic</div>
-        <div style="font-size:13px; color:#86868b; line-height:1.7;">Prévenez votre client que sa montre est prête directement via WhatsApp — plus besoin de chercher le numéro.</div>
+        <div style="width:50px; height:50px; background:linear-gradient(135deg,#34C759,#2E8B4A); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">📝</div>
+        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Devis → facture en 1 clic</div>
+        <div style="font-size:13px; color:#86868b; line-height:1.7;">Faites un devis, marquez-le accepté, puis transformez-le en facture déjà remplie : vous n'avez plus qu'à vérifier et valider.</div>
       </div>
       <div style="background:white; border-radius:20px; padding:28px; text-align:left; box-shadow:0 4px 20px rgba(52,199,89,0.1); border:1px solid rgba(52,199,89,0.2);">
-        <div style="width:50px; height:50px; background:linear-gradient(135deg,#34C759,#2E8B4A); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">📈</div>
-        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Graphiques de CA</div>
-        <div style="font-size:13px; color:#86868b; line-height:1.7;">Suivez votre chiffre d'affaires mois par mois, par catégorie et par statut avec des graphiques clairs et lisibles.</div>
+        <div style="width:50px; height:50px; background:linear-gradient(135deg,#FF9500,#FF6B00); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">↩️</div>
+        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Avoirs et factures conformes</div>
+        <div style="font-size:13px; color:#86868b; line-height:1.7;">TVA 20&nbsp;% ou franchise, mentions à cocher, numérotation continue. Une facture se corrige par un avoir, comme l'exige la loi.</div>
       </div>
       <div style="background:white; border-radius:20px; padding:28px; text-align:left; box-shadow:0 4px 20px rgba(52,199,89,0.1); border:1px solid rgba(52,199,89,0.2);">
-        <div style="width:50px; height:50px; background:linear-gradient(135deg,#007AFF,#0051D5); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">📅</div>
-        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Vue Calendrier</div>
-        <div style="font-size:13px; color:#86868b; line-height:1.7;">Visualisez vos réparations sous forme de calendrier — idéal pour planifier les rendus et anticiper la charge de travail.</div>
+        <div style="width:50px; height:50px; background:linear-gradient(135deg,#007AFF,#0051D5); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">🗂️</div>
+        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Onglet Documents</div>
+        <div style="font-size:13px; color:#86868b; line-height:1.7;">Devis, factures, avoirs et bons de livraison en un coup d'œil, avec totaux et export Excel pour le comptable.</div>
       </div>
       <div style="background:white; border-radius:20px; padding:28px; text-align:left; box-shadow:0 4px 20px rgba(52,199,89,0.1); border:1px solid rgba(52,199,89,0.2);">
-        <div style="width:50px; height:50px; background:linear-gradient(135deg,#FF9500,#FF6B00); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">🖨️</div>
-        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Impression directe</div>
-        <div style="font-size:13px; color:#86868b; line-height:1.7;">Imprimez le bon de dépôt directement sur votre imprimante sans passer par un PDF — rapide et simple.</div>
+        <div style="width:50px; height:50px; background:linear-gradient(135deg,#25D366,#128C7E); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">🎁</div>
+        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Fidélité reliée</div>
+        <div style="font-size:13px; color:#86868b; line-height:1.7;">SMS « votre montre est prête » et point de fidélité au retrait, automatiquement, avec la carte Ancrimo.</div>
       </div>
     </div>
   </div>
@@ -515,7 +525,9 @@
           <li>Graphiques & Calendrier 📈📅</li>
           <li>Impression directe 🖨️</li>
           <li>Suivi des acomptes 💰</li>
-          <li>Bons de dépôt & factures PDF</li>
+          <li>Devis, factures, avoirs & bons de livraison 📄</li>
+          <li>Onglet Documents & export Excel 🗂️</li>
+          <li>Sur téléphone et tablette 📲</li>
           <li>Support par email</li>
         </ul>
         <a href="https://buy.stripe.com/9B6bJ1f1a1pw7bz6fU6g80f" class="btn-pricing btn-pricing-blue">S'abonner — Version Web</a>
