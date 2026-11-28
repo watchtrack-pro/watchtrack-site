@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="WatchTrack MontrePro: die Reparatur-Software für Uhrmacher, Juweliere, Schuhmacher, Schlüsseldienste und alle Werkstätten in der Schweiz. Reparaturen, Anzahlungen, Offerten, Rechnungen, Gutschriften und Lieferscheine, WhatsApp an den Kunden. Preise in CHF, 15 Tage gratis testen, ohne Kreditkarte.">
+<link rel="canonical" href="https://watchtrack-pro.fr/de.html">
+<link rel="alternate" hreflang="fr" href="https://watchtrack-pro.fr/">
+<link rel="alternate" hreflang="de-CH" href="https://watchtrack-pro.fr/de.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://watchtrack-pro.fr/de.html">
+<meta property="og:site_name" content="WatchTrack MontrePro">
+<meta property="og:locale" content="de_CH">
+<meta property="og:title" content="WatchTrack MontrePro, die Reparatur-Software für Werkstätten">
+<meta property="og:description" content="Reparaturen, Anzahlungen, Rechnungen, WhatsApp an den Kunden. Von einem Uhrmacher entwickelt, für alle Werkstätten: Uhren, Schuhe, Schlüssel, Schmuck. Preise in CHF, 15 Tage gratis.">
+<meta name="twitter:card" content="summary">
+  <title>WatchTrack MontrePro — Reparatur-Software für Uhrmacher, Schuhmacher und Werkstätten</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif; background: linear-gradient(160deg, #f0f4f0 0%, #e8f0e8 50%, #f5f5f7 100%); color: #1d1d1f; min-height: 100vh; }
+
+    header { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0,0,0,0.08); z-index: 100; padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 1px 20px rgba(0,0,0,0.08); }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #34C759, #2E8B4A); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 12px rgba(46,139,74,0.4); }
+    .logo-text { font-size: 18px; font-weight: 700; color: #1d1d1f; letter-spacing: -0.3px; }
+    .logo-sub { font-size: 11px; color: #86868b; }
+    .header-btns { display: flex; gap: 12px; align-items: center; }
+    .btn-outline { padding: 8px 16px; border: 1.5px solid rgba(0,0,0,0.12); border-radius: 10px; color: #1d1d1f; text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; background: transparent; cursor: pointer; }
+    .btn-outline:hover { border-color: #34C759; color: #2E8B4A; background: rgba(52,199,89,0.05); }
+    .btn-green { padding: 8px 20px; background: linear-gradient(135deg, #34C759, #2E8B4A); border-radius: 10px; color: white; text-decoration: none; font-size: 13px; font-weight: 700; box-shadow: 0 4px 12px rgba(46,139,74,0.35); transition: all 0.2s; border: none; cursor: pointer; }
+    .btn-green:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(46,139,74,0.45); }
+    .btn-blue { padding: 8px 20px; background: linear-gradient(135deg, #007AFF, #0051D5); border-radius: 10px; color: white; text-decoration: none; font-size: 13px; font-weight: 700; box-shadow: 0 4px 12px rgba(0,122,255,0.35); transition: all 0.2s; border: none; cursor: pointer; }
+    .btn-blue:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,122,255,0.45); }
+
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 100px 40px 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 30%, rgba(52,199,89,0.08) 0%, transparent 70%); }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px; background: rgba(52,199,89,0.1); border: 1px solid rgba(52,199,89,0.25); border-radius: 20px; font-size: 12px; font-weight: 600; color: #2E8B4A; margin-bottom: 24px; }
+    .hero h1 { font-size: clamp(38px, 6vw, 72px); font-weight: 800; letter-spacing: -2px; line-height: 1.05; margin-bottom: 24px; color: #1d1d1f; }
+    .hero h1 span { background: linear-gradient(135deg, #34C759, #2E8B4A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero p { font-size: 19px; color: #86868b; max-width: 580px; margin: 0 auto 40px; line-height: 1.7; }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+    .btn-hero-primary { padding: 16px 36px; background: linear-gradient(135deg, #34C759, #2E8B4A); border-radius: 14px; color: white; text-decoration: none; font-size: 16px; font-weight: 700; box-shadow: 0 8px 28px rgba(46,139,74,0.4); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(46,139,74,0.5); }
+    .btn-hero-secondary { padding: 16px 36px; background: rgba(255,255,255,0.8); border: 1.5px solid rgba(0,0,0,0.1); border-radius: 14px; color: #1d1d1f; text-decoration: none; font-size: 16px; font-weight: 600; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; backdrop-filter: blur(10px); }
+    .btn-hero-secondary:hover { background: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .btn-hero-blue { padding: 16px 36px; background: linear-gradient(135deg, #007AFF, #0051D5); border-radius: 14px; color: white; text-decoration: none; font-size: 16px; font-weight: 700; box-shadow: 0 8px 28px rgba(0,122,255,0.4); transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-hero-blue:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,122,255,0.5); }
+    .hero-stats { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; }
+    .hero-stat-val { font-size: 30px; font-weight: 800; color: #2E8B4A; letter-spacing: -1px; }
+    .hero-stat-label { font-size: 12px; color: #86868b; margin-top: 4px; font-weight: 500; }
+
+    .card { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.8); border-radius: 20px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .section { padding: 100px 40px; max-width: 1200px; margin: 0 auto; }
+    .section-tag { font-size: 11px; font-weight: 700; color: #2E8B4A; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; color: #1d1d1f; }
+    .section-sub { font-size: 17px; color: #86868b; max-width: 580px; line-height: 1.7; margin-bottom: 56px; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .feature-card { background: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.8); border-radius: 20px; padding: 28px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); border-color: rgba(52,199,89,0.2); }
+    .feature-card.new-feature { border-color: rgba(52,199,89,0.3); background: linear-gradient(135deg, rgba(52,199,89,0.04), rgba(255,255,255,0.9)); }
+    .feature-icon { width: 48px; height: 48px; background: rgba(52,199,89,0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 16px; }
+    .feature-icon.new { background: rgba(52,199,89,0.15); }
+    .feature-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: #1d1d1f; }
+    .feature-desc { font-size: 14px; color: #86868b; line-height: 1.7; }
+    .new-badge { display: inline-block; padding: 2px 8px; background: linear-gradient(135deg, #34C759, #2E8B4A); color: white; border-radius: 6px; font-size: 10px; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+
+    .statuts-section { background: rgba(255,255,255,0.5); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); padding: 80px 40px; backdrop-filter: blur(10px); }
+    .statuts-grid { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; max-width: 900px; margin: 0 auto; }
+    .statut-pill { padding: 10px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 8px; border: 2px solid; }
+
+    .web-section { padding: 100px 40px; background: linear-gradient(135deg, rgba(0,122,255,0.04), rgba(0,81,213,0.02)); border-top: 1px solid rgba(0,0,0,0.06); }
+    .web-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto; align-items: center; }
+    .web-feature { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+    .web-feature-icon { width: 44px; height: 44px; background: rgba(0,122,255,0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+
+    .pricing-section { padding: 100px 40px; }
+    .pricing-card { background: rgba(255,255,255,0.9); border: 1px solid rgba(255,255,255,0.8); border-radius: 24px; padding: 40px; text-align: center; transition: all 0.3s; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .pricing-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+    .pricing-card.featured { background: linear-gradient(135deg, rgba(52,199,89,0.08), rgba(46,139,74,0.04)); border-color: rgba(52,199,89,0.3); position: relative; box-shadow: 0 8px 32px rgba(52,199,89,0.15); }
+    .pricing-card.featured::before { content: '⭐ BELIEBT'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #34C759, #2E8B4A); color: white; padding: 4px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 12px rgba(46,139,74,0.4); }
+    .pricing-card.web-card { background: linear-gradient(135deg, rgba(0,122,255,0.06), rgba(0,81,213,0.02)); border-color: rgba(0,122,255,0.3); position: relative; box-shadow: 0 8px 32px rgba(0,122,255,0.1); }
+    .pricing-card.web-card::before { content: '☁️ WEB'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #007AFF, #0051D5); color: white; padding: 4px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,122,255,0.4); }
+    .pricing-card.pack-card { background: linear-gradient(135deg, rgba(175,82,222,0.06), rgba(139,61,184,0.02)); border-color: rgba(175,82,222,0.3); position: relative; box-shadow: 0 8px 32px rgba(175,82,222,0.1); }
+    .pricing-card.pack-card::before { content: '🏪 NETZWERK'; position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #AF52DE, #8B3DB8); color: white; padding: 4px 16px; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; box-shadow: 0 4px 12px rgba(175,82,222,0.4); }
+    .pricing-icon { font-size: 40px; margin-bottom: 16px; }
+    .pricing-price { font-size: 48px; font-weight: 800; letter-spacing: -2px; margin-bottom: 4px; color: #1d1d1f; }
+    .pricing-period { font-size: 14px; color: #86868b; margin-bottom: 24px; }
+    .pricing-features { list-style: none; margin-bottom: 32px; text-align: left; }
+    .pricing-features li { padding: 8px 0; font-size: 14px; color: #1d1d1f; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+    .pricing-features li::before { content: '✅'; font-size: 12px; flex-shrink: 0; }
+    .btn-pricing { display: block; padding: 14px; border-radius: 12px; font-size: 15px; font-weight: 700; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none; width: 100%; font-family: inherit; }
+    .btn-pricing-green { background: linear-gradient(135deg, #34C759, #2E8B4A); color: white; box-shadow: 0 4px 16px rgba(46,139,74,0.35); }
+    .btn-pricing-green:hover { box-shadow: 0 8px 28px rgba(46,139,74,0.5); transform: translateY(-2px); }
+    .btn-pricing-blue { background: linear-gradient(135deg, #007AFF, #0051D5); color: white; box-shadow: 0 4px 16px rgba(0,122,255,0.35); }
+    .btn-pricing-blue:hover { box-shadow: 0 8px 28px rgba(0,122,255,0.5); transform: translateY(-2px); }
+    .btn-pricing-purple { background: linear-gradient(135deg, #AF52DE, #8B3DB8); color: white; box-shadow: 0 4px 16px rgba(175,82,222,0.35); }
+    .btn-pricing-purple:hover { box-shadow: 0 8px 28px rgba(175,82,222,0.5); transform: translateY(-2px); }
+    .btn-pricing-outline { background: rgba(0,0,0,0.04); color: #1d1d1f; border: 1.5px solid rgba(0,0,0,0.1) !important; }
+    .btn-pricing-outline:hover { background: rgba(0,0,0,0.07); }
+
+    .pack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto; }
+    .pack-card-mini { background: rgba(255,255,255,0.9); border: 1px solid rgba(175,82,222,0.2); border-radius: 20px; padding: 28px 20px; text-align: center; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.05); position: relative; }
+    .pack-card-mini:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(175,82,222,0.15); border-color: rgba(175,82,222,0.4); }
+    .pack-card-mini.best { background: linear-gradient(135deg, rgba(175,82,222,0.08), rgba(139,61,184,0.04)); border-color: rgba(175,82,222,0.4); }
+    .pack-card-mini.best::before { content: '⭐ BESTER PREIS'; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, #AF52DE, #8B3DB8); color: white; padding: 3px 12px; border-radius: 20px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+
+    .trial-section { padding: 80px 40px; text-align: center; }
+    .trial-box { background: rgba(255,255,255,0.9); border: 1px solid rgba(52,199,89,0.2); border-radius: 28px; padding: 60px 40px; max-width: 680px; margin: 0 auto; box-shadow: 0 8px 40px rgba(52,199,89,0.1), 0 4px 24px rgba(0,0,0,0.06); }
+    .trial-box h2 { font-size: 36px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; color: #1d1d1f; }
+    .trial-box p { font-size: 16px; color: #86868b; margin-bottom: 32px; line-height: 1.7; }
+
+    footer { padding: 40px; border-top: 1px solid rgba(0,0,0,0.06); text-align: center; color: #86868b; font-size: 13px; background: rgba(255,255,255,0.5); }
+    footer a { color: #2E8B4A; text-decoration: none; font-weight: 600; }
+    footer a:hover { color: #34C759; }
+
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes slideIn { from { opacity:0; transform:translateX(-20px); } to { opacity:1; transform:translateX(0); } }
+    .demo-stat { animation-fill-mode: forwards; }
+    .statut-card { transition: all 0.3s; }
+
+    @media (max-width: 768px) {
+      .pack-grid { grid-template-columns: 1fr 1fr; }
+      .web-grid { grid-template-columns: 1fr; }
+      .hero-stats { gap: 24px; }
+      header { padding: 0 20px; }
+      .header-btns .btn-outline { display: none; }
+      .logo-sub { display: none; }
+      .header-btns { gap: 8px; }
+      .header-btns .btn-blue, .header-btns .btn-green { padding: 8px 12px; }
+      .section { padding: 60px 20px; }
+      [style*="grid-template-columns:repeat(5,1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+      [style*="grid-template-columns:repeat(6,1fr)"] { grid-template-columns: repeat(3, 1fr) !important; }
+      [style*="display:inline-flex; align-items:center; gap:20px"] { flex-wrap: wrap; justify-content: center; gap: 12px !important; padding: 14px 16px !important; }
+      div:has(> table) { overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+    }
+  </style>
+
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    <div class="logo-icon">⌚</div>
+    <div>
+      <div class="logo-text">WatchTrack</div>
+      <div class="logo-sub">MontrePro — Reparaturverwaltung</div>
+    </div>
+  </div>
+  <div class="header-btns">
+    <a href="#funktionen" class="btn-outline">Funktionen</a>
+    <a href="#preise" class="btn-outline">Preise</a>
+    <a href="#netzwerk" class="btn-outline">Filialnetz</a>
+    <a href="/" class="btn-outline" lang="fr" hreflang="fr">FR</a>
+    <a href="https://app.watchtrack-pro.fr/?lang=de" class="btn-blue" style="white-space:nowrap;">☁️ Anmelden</a>
+    <a href="#testen" class="btn-green" style="white-space:nowrap;">Gratis testen</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div style="position:relative;z-index:1;">
+    <div class="hero-badge">⌚ 🔑 👞 Uhrmacher, Schuhmacher, Schlüsseldienste, Juweliere … alle Werkstätten</div>
+    <h1>Die Reparatur-Software<br/><span>für Ihre Werkstatt</span></h1>
+    <p>WatchTrack MontrePro vereinfacht die Verwaltung Ihrer Reparaturen. Tickets, Status, Anzahlungen, PDF-Rechnungen, Abholscheine — alles an einem Ort. Direkt im Browser auf PC, Mac, Tablet und Handy.</p>
+    <div class="hero-btns">
+      <a href="https://app.watchtrack-pro.fr/?lang=de" class="btn-hero-blue">☁️ Web-Version</a>
+      <a href="#netzwerk" class="btn-hero-secondary">🏪 Mehrere Filialen →</a>
+    </div>
+    <div class="hero-stats">
+      <div style="text-align:center;"><div class="hero-stat-val">15 Tage</div><div class="hero-stat-label">gratis testen</div></div>
+      <div style="text-align:center;"><div class="hero-stat-val">CHF 49</div><div class="hero-stat-label">pro Monat</div></div>
+      <div style="text-align:center;"><div class="hero-stat-val">CHF 199</div><div class="hero-stat-label">Paket 5 Filialen</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNKTIONEN -->
+<div id="funktionen" style="background:rgba(255,255,255,0.4); border-top:1px solid rgba(0,0,0,0.06); backdrop-filter:blur(10px);">
+  <div class="section">
+    <div class="section-tag">Funktionen</div>
+    <h2 class="section-title">Alles, was Sie brauchen</h2>
+    <p class="section-sub">Eine einfache, schnelle und professionelle Software — von einem Uhrmacher entwickelt, für alle Reparaturwerkstätten.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">📋</div><div class="feature-title">Reparaturen erfassen</div><div class="feature-desc">Jeder Artikel mit Ticket, Kunde, Marke, Modell, Art der Reparatur und geschätztem Preis.</div></div>
+      <div class="feature-card"><div class="feature-icon">🔄</div><div class="feature-title">Status verfolgen</div><div class="feature-desc">7 farbige Status: Eingegangen, In Diagnose, In Reparatur, Wartet auf Teil, In der Werkstatt, Bereit, Zurückgegeben.</div></div>
+      <div class="feature-card"><div class="feature-icon">🗂️</div><div class="feature-title">Mehrere Kategorien</div><div class="feature-desc">Uhren, Schlüssel, Stempel, Fernbedienungen, Autoschlüssel und vieles mehr in einer einzigen Software.</div></div>
+      <div class="feature-card"><div class="feature-icon">💰</div><div class="feature-title">Anzahlungen</div><div class="feature-desc">Erfassen Sie die erhaltene Anzahlung, der Restbetrag wird automatisch berechnet. Sichtbar auf Abholschein und Rechnung.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">🖨️</div><div class="feature-title">Direkt drucken</div><div class="feature-desc">Drucken Sie den Abholschein mit einem Klick auf Ihrem Drucker — ohne PDF herunterzuladen.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">📄</div><div class="feature-title">Offerten, Rechnungen &amp; Gutschriften</div><div class="feature-desc">Nummerierte Offerten, mit einem Klick in eine Rechnung umgewandelt. Rechnungen mit MWST 8,1&nbsp;% oder ohne MWST (nicht mehrwertsteuerpflichtig), UID-Nummer und fortlaufender Nummerierung ohne Doppel. Ein Fehler? Eine Gutschrift storniert die Rechnung sauber.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">📦</div><div class="feature-title">Lieferscheine</div><div class="feature-desc">Mehrere Artikel oder Leistungen pro Schein, mit oder ohne Preise, mit Unterschriftsfeld. Mit einem Klick in eine Rechnung umwandeln.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">📱</div><div class="feature-title">WhatsApp integriert</div><div class="feature-desc">Informieren Sie Ihren Kunden mit einem Klick per WhatsApp, dass seine Uhr bereit ist — auch mit Schweizer Nummern (+41).</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">📈</div><div class="feature-title">Grafiken &amp; Statistiken</div><div class="feature-desc">Monatsumsatz, Verteilung nach Kategorie und laufende Status als Grafiken.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">📅</div><div class="feature-title">Kalender</div><div class="feature-desc">Alle Reparaturen in der Kalenderansicht: Eingänge und Rückgaben nach Tag, Woche oder Monat.</div></div>
+      <div class="feature-card"><div class="feature-icon">👤</div><div class="feature-title">Vollständige Kundenkartei</div><div class="feature-desc">Verlauf aller Artikel, Gesamtumsatz, erhaltene Anzahlungen, offener Betrag und Stammkunden-Badge.</div></div>
+      <div class="feature-card"><div class="feature-icon">⚠️</div><div class="feature-title">Automatische Hinweise</div><div class="feature-desc">Hinweis, wenn ein Artikel länger als einen Monat in der Werkstatt liegt. Keine Reparatur geht mehr vergessen.</div></div>
+      <div class="feature-card"><div class="feature-icon">📊</div><div class="feature-title">Übersicht</div><div class="feature-desc">Auf einen Blick: Artikel in Arbeit, abholbereit, wartend auf Teile, eingenommener Umsatz und Anzahlungen.</div></div>
+      <div class="feature-card"><div class="feature-icon">☁️</div><div class="feature-title">In der Cloud</div><div class="feature-desc">Zugriff auf Ihre Reparaturen von jedem Browser aus. Die Daten werden automatisch in der Cloud gesichert.</div></div>
+      <div class="feature-card"><div class="feature-icon">🏪</div><div class="feature-title">Mehrere Filialen</div><div class="feature-desc">Verwalten Sie mehrere Geschäfte mit einem einzigen Manager-Konto. Gesamtübersicht des Netzes in Echtzeit.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">🗂️</div><div class="feature-title">Register Dokumente</div><div class="feature-desc">Alle Offerten, Rechnungen, Gutschriften und Lieferscheine an einem Ort: Filter nach Zeitraum, Kunde oder Status, Summen ohne MWST / MWST / inkl. MWST, offene Beträge und Excel-Export für Ihre Buchhaltung.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">📲</div><div class="feature-title">Auf Handy und Tablet</div><div class="feature-desc">Ein Layout für Handy und Tablet: Reparaturen direkt an der Theke erfassen, suchen und zurückgeben.</div></div>
+      <div class="feature-card"><div class="feature-icon">✍️</div><div class="feature-title">Wer hat angenommen, wer zurückgegeben?</div><div class="feature-desc">Die Initialen der Mitarbeitenden bei Annahme und Rückgabe, mit Rückgabedatum: Sie wissen immer, wer was gemacht hat.</div></div>
+      <div class="feature-card new-feature"><div class="feature-icon new">🏷️</div><div class="feature-title">Meine Werkstatt, überall</div><div class="feature-desc">Name, Adresse, UID-Nummer, MWST und Angaben Ihrer Werkstatt: einmal erfasst, auf allen Geräten und Dokumenten verfügbar.</div></div>
+      <div class="feature-card"><div class="feature-icon">🔐</div><div class="feature-title">Sicherer Zugang</div><div class="feature-desc">Persönliche Zugangsdaten, verschlüsselte Verbindung und getrennte Daten für jedes Konto. Ihre Daten bleiben privat.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- BRANCHEN -->
+<div id="branchen">
+  <div class="section">
+    <div class="section-tag">Für wen?</div>
+    <h2 class="section-title">Für alle Geschäfte, die reparieren</h2>
+    <p class="section-sub">Sobald Sie einen Gegenstand annehmen und der Kunde ihn später abholt, ist WatchTrack für Sie gemacht.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">⌚</div><div class="feature-title">Uhren &amp; Schmuck</div><div class="feature-desc">Batterien, Armbänder, Revisionen, Wasserdichtigkeit, Grössenanpassungen, Lötarbeiten: jede Uhr und jedes Schmuckstück von der Annahme bis zur Abholung.</div></div>
+      <div class="feature-card"><div class="feature-icon">👞</div><div class="feature-title">Schuhmacher &amp; Schnellservice</div><div class="feature-desc">Neubesohlungen, Absätze, Batterien, Schlüssel, Gravuren: alle kleinen Arbeiten an der Theke mit Ticket und Status.</div></div>
+      <div class="feature-card"><div class="feature-icon">🔑</div><div class="feature-title">Schlüsseldienst</div><div class="feature-desc">Schlüsselkopien, Autoschlüssel und Fernbedienungen zum Programmieren: Bestellung des Teils und Kunde informiert, sobald alles bereit ist.</div></div>
+      <div class="feature-card"><div class="feature-icon">🖨️</div><div class="feature-title">Gravuren &amp; Stempel</div><div class="feature-desc">Stempel, Schilder, persönliche Gravuren: Text, Frist und Anzahlung an einem Ort.</div></div>
+      <div class="feature-card"><div class="feature-icon">📱</div><div class="feature-title">Handy- &amp; Elektronikreparatur</div><div class="feature-desc">Displays, Akkus, Tablets: Diagnose, Offerte, Warten auf das Teil, dann «Bereit» und WhatsApp an den Kunden.</div></div>
+      <div class="feature-card"><div class="feature-icon">🧵</div><div class="feature-title">Und alle Werkstätten</div><div class="feature-desc">Änderungsschneiderei, Optik, Kleingeräte, Velos … Die Kategorie «Andere» passt sich Ihrem Beruf an.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NEUHEITEN -->
+<div style="background:linear-gradient(135deg, rgba(52,199,89,0.06), rgba(46,139,74,0.02)); border-top:1px solid rgba(52,199,89,0.15); border-bottom:1px solid rgba(52,199,89,0.15); padding:80px 40px;">
+  <div style="max-width:1200px; margin:0 auto; text-align:center;">
+    <div class="section-tag" style="text-align:center;">Neuheiten</div>
+    <h2 class="section-title" style="text-align:center; margin-bottom:16px;">Die neuesten Funktionen</h2>
+    <p style="text-align:center; color:#86868b; font-size:17px; max-width:580px; margin:0 auto 48px;">Regelmässige Updates, im Abo inbegriffen</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:20px; max-width:1000px; margin:0 auto;">
+      <div style="background:white; border-radius:20px; padding:28px; text-align:left; box-shadow:0 4px 20px rgba(52,199,89,0.1); border:1px solid rgba(52,199,89,0.2);">
+        <div style="width:50px; height:50px; background:linear-gradient(135deg,#34C759,#2E8B4A); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">📝</div>
+        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Offerte → Rechnung mit 1 Klick</div>
+        <div style="font-size:13px; color:#86868b; line-height:1.7;">Offerte erstellen, als angenommen markieren und in eine bereits ausgefüllte Rechnung umwandeln: nur noch prüfen und bestätigen.</div>
+      </div>
+      <div style="background:white; border-radius:20px; padding:28px; text-align:left; box-shadow:0 4px 20px rgba(52,199,89,0.1); border:1px solid rgba(52,199,89,0.2);">
+        <div style="width:50px; height:50px; background:linear-gradient(135deg,#FF9500,#FF6B00); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">↩️</div>
+        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Gutschriften und saubere Rechnungen</div>
+        <div style="font-size:13px; color:#86868b; line-height:1.7;">MWST 8,1&nbsp;% oder ohne MWST, UID-Nummer, fortlaufende Nummerierung. Eine Rechnung wird mit einer Gutschrift korrigiert.</div>
+      </div>
+      <div style="background:white; border-radius:20px; padding:28px; text-align:left; box-shadow:0 4px 20px rgba(52,199,89,0.1); border:1px solid rgba(52,199,89,0.2);">
+        <div style="width:50px; height:50px; background:linear-gradient(135deg,#007AFF,#0051D5); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">🗂️</div>
+        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Register Dokumente</div>
+        <div style="font-size:13px; color:#86868b; line-height:1.7;">Offerten, Rechnungen, Gutschriften und Lieferscheine auf einen Blick, mit Summen und Excel-Export für die Buchhaltung.</div>
+      </div>
+      <div style="background:white; border-radius:20px; padding:28px; text-align:left; box-shadow:0 4px 20px rgba(52,199,89,0.1); border:1px solid rgba(52,199,89,0.2);">
+        <div style="width:50px; height:50px; background:linear-gradient(135deg,#25D366,#128C7E); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; margin-bottom:16px;">🇨🇭</div>
+        <div style="font-size:16px; font-weight:700; margin-bottom:8px;">Für die Schweiz</div>
+        <div style="font-size:13px; color:#86868b; line-height:1.7;">Beträge in CHF, Schweizer Telefonnummern (+41), MWST-Sätze und UID-Nummer auf Ihren Dokumenten.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STATUS -->
+<div class="statuts-section">
+  <div style="text-align:center; max-width:1200px; margin:0 auto;">
+    <div class="section-tag" style="text-align:center;">Reparaturstatus</div>
+    <h2 class="section-title" style="text-align:center; margin-bottom:40px;">Jeden Artikel in Echtzeit verfolgen</h2>
+    <div class="statuts-grid">
+      <div class="statut-pill" style="background:#FCE4EC; color:#C2185B; border-color:#C2185B;">🌸 Eingegangen</div>
+      <div class="statut-pill" style="background:#E1BEE7; color:#6B1E9E; border-color:#6B1E9E;">🟣 In Diagnose</div>
+      <div class="statut-pill" style="background:#FFE0B2; color:#E65100; border-color:#E65100;">🟠 In Reparatur</div>
+      <div class="statut-pill" style="background:#FFF176; color:#F57F00; border-color:#F57F00;">🟡 Wartet auf Teil</div>
+      <div class="statut-pill" style="background:#BBDEFB; color:#1565C0; border-color:#1565C0;">🔵 In der Werkstatt</div>
+      <div class="statut-pill" style="background:#A8EFC0; color:#1A6E35; border-color:#1A6E35;">🟢 Bereit</div>
+      <div class="statut-pill" style="background:#FFB8B8; color:#8B1A1A; border-color:#8B1A1A;">🔴 Zurückgegeben</div>
+    </div>
+  </div>
+</div>
+
+<!-- WEB-VERSION -->
+<div class="web-section">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:56px;">
+      <div class="section-tag" style="text-align:center;">Web-Version</div>
+      <h2 class="section-title" style="text-align:center;">Ihre Reparaturen überall dabei</h2>
+      <p style="text-align:center; color:#86868b; font-size:17px; max-width:580px; margin:0 auto;">Verwalten Sie Ihre Werkstatt in jedem Browser — PC, Mac, Tablet oder Smartphone.</p>
+    </div>
+    <div class="web-grid">
+      <div>
+        <div class="web-feature"><div class="web-feature-icon">☁️</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Daten in der Cloud</div><div style="font-size:14px; color:#86868b; line-height:1.6;">Ihre Reparaturen werden automatisch gesichert, in Europa gespeichert. Kein Datenverlust.</div></div></div>
+        <div class="web-feature"><div class="web-feature-icon">📱</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">WhatsApp integriert</div><div style="font-size:14px; color:#86868b; line-height:1.6;">Benachrichtigen Sie Ihre Kunden mit einem Klick per WhatsApp, direkt aus der Reparaturkarte.</div></div></div>
+        <div class="web-feature"><div class="web-feature-icon">📈</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Grafiken &amp; Kalender</div><div style="font-size:14px; color:#86868b; line-height:1.6;">Verfolgen Sie Ihre Aktivität mit Umsatzgrafiken und einer Kalenderansicht.</div></div></div>
+        <div class="web-feature"><div class="web-feature-icon">🖨️</div><div><div style="font-size:16px; font-weight:700; margin-bottom:4px;">Direkt drucken</div><div style="font-size:14px; color:#86868b; line-height:1.6;">Drucken Sie den Abholschein direkt auf Ihrem Drucker, ohne PDF herunterzuladen.</div></div></div>
+        <div style="margin-top:32px;">
+          <a href="https://app.watchtrack-pro.fr/?lang=de" class="btn-hero-blue" style="display:inline-flex;">☁️ 15 Tage gratis testen</a>
+        </div>
+      </div>
+      <div style="background:rgba(255,255,255,0.9); border-radius:24px; padding:32px; box-shadow:0 8px 40px rgba(0,122,255,0.1); border:1px solid rgba(0,122,255,0.15);">
+        <div style="text-align:center; margin-bottom:24px;">
+          <div style="width:60px; height:60px; background:linear-gradient(135deg,#007AFF,#0051D5); border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:28px; margin:0 auto 12px;">⌚</div>
+          <div style="font-size:16px; font-weight:700; color:#1d1d1f;">WatchTrack Web</div>
+          <div style="font-size:12px; color:#86868b;">app.watchtrack-pro.fr</div>
+          <div style="margin-top:8px; display:inline-block; padding:4px 14px; background:rgba(0,122,255,0.1); border-radius:20px; font-size:12px; font-weight:700; color:#007AFF;">CHF 49/Monat — 15 Tage gratis</div>
+        </div>
+        <div style="background:rgba(0,122,255,0.06); border-radius:12px; padding:16px; margin-bottom:12px;">
+          <div style="font-size:12px; color:#86868b; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Übersicht</div>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <div style="padding:6px 12px; background:#C8E4FF; border-radius:8px; font-size:11px; font-weight:700; color:#1A5FA8;">⌚ 12 in Arbeit</div>
+            <div style="padding:6px 12px; background:#A8EFC0; border-radius:8px; font-size:11px; font-weight:700; color:#1A6E35;">✅ 3 bereit</div>
+            <div style="padding:6px 12px; background:#FFE870; border-radius:8px; font-size:11px; font-weight:700; color:#A07800;">⏳ 2 wartend</div>
+          </div>
+        </div>
+        <div style="background:rgba(37,211,102,0.06); border-radius:12px; padding:16px; margin-bottom:12px; border:1px solid rgba(37,211,102,0.2);">
+          <div style="font-size:12px; color:#86868b; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">📱 WhatsApp — Uhr bereit</div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <div style="flex:1; font-size:11px; color:#1d1d1f;">Thomas Meier — Rolex Submariner</div>
+            <div style="padding:5px 10px; background:linear-gradient(135deg,#25D366,#128C7E); color:white; border-radius:8px; font-size:10px; font-weight:700;">📱 WhatsApp</div>
+          </div>
+        </div>
+        <div style="background:rgba(0,122,255,0.06); border-radius:12px; padding:16px;">
+          <div style="font-size:12px; color:#86868b; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:8px;">Offene Anzahlungen</div>
+          <div style="font-size:13px; color:#1d1d1f; margin-bottom:4px;">💰 Erhaltene Anzahlungen: <strong style="color:#1A6E35;">CHF 450</strong></div>
+          <div style="font-size:13px; color:#1d1d1f;">📋 Offener Betrag: <strong style="color:#B84A00;">CHF 1'250</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FILIALNETZ -->
+<div id="netzwerk" style="padding:100px 40px; background:linear-gradient(135deg, rgba(175,82,222,0.04), rgba(139,61,184,0.02)); border-top:1px solid rgba(0,0,0,0.06);">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:56px;">
+      <div style="font-size:11px; font-weight:700; color:#AF52DE; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:12px;">Filialnetz-Pakete</div>
+      <h2 class="section-title" style="text-align:center;">Ihr ganzes Filialnetz im Griff</h2>
+      <p style="text-align:center; color:#86868b; font-size:17px; max-width:620px; margin:0 auto 16px;">Ein einziges Abo für alle Ihre Geschäfte. Jede Filiale nutzt die Web-Version, und der Manager hat die Gesamtübersicht über das ganze Netz.</p>
+      <div style="display:inline-flex; align-items:center; gap:20px; padding:16px 32px; background:rgba(175,82,222,0.08); border:1px solid rgba(175,82,222,0.2); border-radius:20px; margin-top:16px;">
+        <div style="text-align:center;"><div style="font-size:20px; font-weight:800; color:#AF52DE;">✅</div><div style="font-size:12px; color:#86868b;">Gesamtübersicht</div></div>
+        <div style="width:1px; height:40px; background:rgba(175,82,222,0.2);"></div>
+        <div style="text-align:center;"><div style="font-size:20px; font-weight:800; color:#AF52DE;">📊</div><div style="font-size:12px; color:#86868b;">Statistik pro Filiale</div></div>
+        <div style="width:1px; height:40px; background:rgba(175,82,222,0.2);"></div>
+        <div style="text-align:center;"><div style="font-size:20px; font-weight:800; color:#AF52DE;">💰</div><div style="font-size:12px; color:#86868b;">Konsolidierter Umsatz</div></div>
+        <div style="width:1px; height:40px; background:rgba(175,82,222,0.2);"></div>
+        <div style="text-align:center;"><div style="font-size:20px; font-weight:800; color:#AF52DE;">🔐</div><div style="font-size:12px; color:#86868b;">Getrennte Daten</div></div>
+      </div>
+    </div>
+    <div class="pack-grid">
+      <div class="pack-card-mini">
+        <div style="font-size:32px; margin-bottom:12px;">🏪🏪🏪</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PAKET 3 FILIALEN</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">CHF 129</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">pro Monat</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">CHF 43.00 / Filiale</div>
+        <a href="https://buy.stripe.com/7sY7sL4mw8RYeE1eMq6g80m" class="btn-pricing btn-pricing-purple">Paket wählen</a>
+      </div>
+      <div class="pack-card-mini best">
+        <div style="font-size:32px; margin-bottom:12px;">🏪🏪🏪🏪🏪</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PAKET 5 FILIALEN</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">CHF 199</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">pro Monat</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">CHF 39.80 / Filiale</div>
+        <a href="https://buy.stripe.com/9B6dR92eo5FM53rawa6g80n" class="btn-pricing btn-pricing-purple">Paket wählen</a>
+      </div>
+      <div class="pack-card-mini">
+        <div style="font-size:32px; margin-bottom:12px;">🏪×10</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PAKET 10 FILIALEN</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">CHF 349</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">pro Monat</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">CHF 34.90 / Filiale</div>
+        <a href="https://buy.stripe.com/4gM8wPf1aeci7bzcEi6g80o" class="btn-pricing btn-pricing-purple">Paket wählen</a>
+      </div>
+      <div class="pack-card-mini">
+        <div style="font-size:32px; margin-bottom:12px;">🏪×25</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PAKET 25 FILIALEN</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">CHF 699</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">pro Monat</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">CHF 27.96 / Filiale</div>
+        <a href="https://buy.stripe.com/7sY7sLg5e5FM2VjdIm6g80p" class="btn-pricing btn-pricing-purple">Paket wählen</a>
+      </div>
+      <div class="pack-card-mini">
+        <div style="font-size:32px; margin-bottom:12px;">🏪×50</div>
+        <div style="font-size:13px; font-weight:700; color:#86868b; margin-bottom:8px;">PAKET 50 FILIALEN</div>
+        <div style="font-size:36px; font-weight:800; color:#AF52DE; letter-spacing:-1px; margin-bottom:4px;">CHF 999</div>
+        <div style="font-size:12px; color:#86868b; margin-bottom:16px;">pro Monat</div>
+        <div style="font-size:11px; color:#AF52DE; font-weight:700; margin-bottom:20px;">CHF 19.98 / Filiale</div>
+        <a href="https://buy.stripe.com/28EcN51ak3xEfI5gUy6g80q" class="btn-pricing btn-pricing-purple">Paket wählen</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px; padding:24px; background:rgba(175,82,222,0.06); border-radius:16px; border:1px solid rgba(175,82,222,0.15); max-width:700px; margin:40px auto 0;">
+      <div style="font-size:15px; font-weight:700; color:#1d1d1f; margin-bottom:8px;">🏪 Mehr als 50 Filialen?</div>
+      <div style="font-size:14px; color:#86868b; margin-bottom:16px;">Kontaktieren Sie uns für ein individuelles Angebot für Ihr Netz.</div>
+      <a href="mailto:watchtrack.pro@outlook.com" style="padding:12px 28px; background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; border-radius:12px; font-size:13px; font-weight:700; text-decoration:none; display:inline-block;">📧 Kontakt</a>
+    </div>
+  </div>
+</div>
+
+<!-- DEMO -->
+<div style="background:rgba(255,255,255,0.4); border-top:1px solid rgba(0,0,0,0.06); border-bottom:1px solid rgba(0,0,0,0.06); padding:80px 40px; backdrop-filter:blur(10px);">
+  <div style="max-width:1200px; margin:0 auto;">
+    <div style="text-align:center; margin-bottom:40px;">
+      <div class="section-tag" style="text-align:center;">Interaktive Demo</div>
+      <h2 class="section-title" style="text-align:center;">WatchTrack in Aktion</h2>
+      <p style="text-align:center; color:#86868b; font-size:17px; max-width:580px; margin:0 auto;">So verwalten Sie Ihre Reparaturen mit wenigen Klicks</p>
+    </div>
+    <div style="background:rgba(255,255,255,0.95); border-radius:24px; box-shadow:0 20px 60px rgba(0,0,0,0.12); overflow:hidden; max-width:900px; margin:0 auto;">
+      <div style="background:linear-gradient(135deg, #2E8B4A, #1a5c30); padding:14px 24px; display:flex; align-items:center; justify-content:space-between;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <div style="width:30px; height:30px; background:rgba(255,255,255,0.2); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:15px;">⌚</div>
+          <div>
+            <div style="color:white; font-weight:700; font-size:13px;">WatchTrack MontrePro</div>
+            <div style="color:rgba(255,255,255,0.7); font-size:10px;">Reparaturverwaltung</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:6px;">
+          <div id="nav-dashboard" style="padding:5px 10px; background:rgba(255,255,255,0.25); border-radius:7px; color:white; font-size:10px; font-weight:700;">📊 Übersicht</div>
+          <div id="nav-form" style="padding:5px 10px; background:rgba(255,255,255,0.1); border-radius:7px; color:rgba(255,255,255,0.6); font-size:10px;">➕ Neu</div>
+          <div id="nav-statuts" style="padding:5px 10px; background:rgba(255,255,255,0.1); border-radius:7px; color:rgba(255,255,255,0.6); font-size:10px;">🎨 Status</div>
+        </div>
+      </div>
+      <div style="padding:16px 24px 0; text-align:center;">
+        <div id="demo-title" style="font-size:16px; font-weight:700; color:#1d1d1f; margin-bottom:2px;">📊 Übersicht in Echtzeit</div>
+        <div id="demo-subtitle" style="font-size:12px; color:#86868b;">Alle Reparaturen und Ihr Umsatz auf einen Blick</div>
+      </div>
+      <div style="padding:20px 24px 24px;">
+        <div id="demo-dashboard">
+          <div style="display:grid; grid-template-columns:repeat(6,1fr); gap:10px; margin-bottom:16px;">
+            <div style="background:#EDF5FF; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #1A5FA8;"><div style="font-size:16px;">⌚</div><div style="font-size:18px; font-weight:800; color:#1A5FA8;">8</div><div style="font-size:9px; color:#86868b;">In Arbeit</div></div>
+            <div style="background:#F0FBF4; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #1A6E35;"><div style="font-size:16px;">✅</div><div style="font-size:18px; font-weight:800; color:#1A6E35;">3</div><div style="font-size:9px; color:#86868b;">Bereit</div></div>
+            <div style="background:#FFFDE7; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #F57F00;"><div style="font-size:16px;">⏳</div><div style="font-size:18px; font-weight:800; color:#F57F00;">2</div><div style="font-size:9px; color:#86868b;">Wartet auf Teil</div></div>
+            <div style="background:#EDE7F6; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #6B1E9E;"><div style="font-size:16px;">📋</div><div style="font-size:18px; font-weight:800; color:#6B1E9E;">24</div><div style="font-size:9px; color:#86868b;">Karten total</div></div>
+            <div style="background:#FFF3E0; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #B84A00;"><div style="font-size:16px;">💰</div><div style="font-size:18px; font-weight:800; color:#B84A00;">1'240</div><div style="font-size:9px; color:#86868b;">Umsatz CHF</div></div>
+            <div style="background:#E8F5E9; border-radius:12px; padding:12px; text-align:center; border-top:3px solid #1A6E35;"><div style="font-size:16px;">💵</div><div style="font-size:18px; font-weight:800; color:#1A6E35;">350</div><div style="font-size:9px; color:#86868b;">Anzahlungen CHF</div></div>
+          </div>
+          <div style="background:white; border-radius:12px; overflow:hidden; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+            <div style="padding:10px 16px; background:rgba(248,248,248,0.8); border-bottom:1px solid rgba(0,0,0,0.06);"><span style="font-size:10px; color:#86868b; font-weight:700; text-transform:uppercase;">Letzte Reparaturen</span></div>
+            <table style="width:100%; border-collapse:collapse; font-size:11px;">
+              <thead><tr style="background:rgba(248,248,248,0.8);">
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Ticket</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Kunde</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Artikel</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Status</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">Preis</th>
+                <th style="padding:8px 12px; text-align:left; font-size:9px; color:#86868b; font-weight:700; text-transform:uppercase;">WhatsApp</th>
+              </tr></thead>
+              <tbody id="demo-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+        <div id="demo-form" style="display:none;">
+          <div style="background:white; border-radius:12px; padding:20px; box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+              <div><label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Name Kunde *</label><input id="demo-client" type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box; font-family:inherit; transition:all 0.3s;" placeholder="Peter Muster" /></div>
+              <div><label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Telefon</label><input type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box;" value="079 123 45 67" /></div>
+              <div><label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Marke *</label><input id="demo-montre" type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box; transition:all 0.3s;" placeholder="Rolex, Seiko …" /></div>
+              <div><label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Art der Reparatur</label><input id="demo-rep" type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box; transition:all 0.3s;" placeholder="Komplette Revision …" /></div>
+              <div><label style="font-size:10px; color:#86868b; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">Geschätzter Preis</label><input type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box;" value="CHF 350" /></div>
+              <div><label style="font-size:10px; color:#A07800; font-weight:700; display:block; margin-bottom:5px; text-transform:uppercase;">💰 Anzahlung erhalten</label><input type="text" readonly style="width:100%; padding:9px 12px; background:rgba(118,118,128,0.08); border:none; border-radius:9px; font-size:12px; box-sizing:border-box;" value="CHF 150" /></div>
+            </div>
+            <div style="display:flex; justify-content:flex-end; gap:10px;">
+              <div style="padding:9px 18px; background:rgba(0,0,0,0.06); border-radius:9px; font-size:12px; color:#86868b; font-weight:600;">Abbrechen</div>
+              <div id="demo-save-btn" style="padding:9px 18px; background:linear-gradient(135deg,#34C759,#2E8B4A); color:white; border-radius:9px; font-size:12px; font-weight:700; transition:all 0.3s;">✓ Speichern</div>
+            </div>
+          </div>
+        </div>
+        <div id="demo-statuts" style="display:none;">
+          <div style="margin-bottom:16px; padding:12px 16px; background:rgba(52,199,89,0.08); border-radius:12px; border:1px solid rgba(52,199,89,0.2); text-align:center;">
+            <span style="font-size:12px; color:#2E8B4A; font-weight:700;">Klicken Sie auf einen Status, um ihn sofort anzuwenden!</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-bottom:20px;">
+            <div class="statut-card" data-statut="0" style="background:#FCE4EC; border:2px solid #C2185B; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🌸</div><div style="font-size:11px; font-weight:700; color:#C2185B;">Eingegangen</div></div>
+            <div class="statut-card" data-statut="1" style="background:#E1BEE7; border:2px solid #6B1E9E; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🟣</div><div style="font-size:11px; font-weight:700; color:#6B1E9E;">In Diagnose</div></div>
+            <div class="statut-card" data-statut="2" style="background:#FFE0B2; border:2px solid #E65100; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🟠</div><div style="font-size:11px; font-weight:700; color:#E65100;">In Reparatur</div></div>
+            <div class="statut-card" data-statut="3" style="background:#FFF176; border:2px solid #F57F00; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🟡</div><div style="font-size:11px; font-weight:700; color:#F57F00;">Wartet auf Teil</div></div>
+            <div class="statut-card" data-statut="4" style="background:#BBDEFB; border:2px solid #1565C0; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🔵</div><div style="font-size:11px; font-weight:700; color:#1565C0;">In der Werkstatt</div></div>
+            <div class="statut-card" data-statut="5" style="background:#A8EFC0; border:2px solid #1A6E35; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🟢</div><div style="font-size:11px; font-weight:700; color:#1A6E35;">Bereit</div></div>
+            <div class="statut-card" data-statut="6" style="background:#FFB8B8; border:2px solid #8B1A1A; border-radius:14px; padding:14px 18px; text-align:center; cursor:pointer; min-width:110px;"><div style="font-size:20px; margin-bottom:6px;">🔴</div><div style="font-size:11px; font-weight:700; color:#8B1A1A;">Zurückgegeben</div></div>
+          </div>
+          <div id="statut-result" style="background:white; border-radius:12px; padding:16px; box-shadow:0 2px 12px rgba(0,0,0,0.06); display:flex; align-items:center; justify-content:space-between;">
+            <div>
+              <div style="font-size:13px; font-weight:700;">Omega Seamaster — Anna Keller</div>
+              <div style="font-size:11px; color:#86868b;">Komplette Revision — CHF 120</div>
+            </div>
+            <div style="display:flex; gap:8px; align-items:center;">
+              <div id="statut-badge" style="padding:5px 14px; border-radius:20px; font-size:11px; font-weight:700; background:#A8EFC0; color:#1A6E35; border:2px solid #1A6E35;">🟢 Bereit</div>
+              <div style="padding:5px 10px; background:linear-gradient(135deg,#25D366,#128C7E); color:white; border-radius:8px; font-size:10px; font-weight:700;">📱 WhatsApp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:center; gap:8px; padding-bottom:20px;">
+        <div id="dot-0" style="width:8px; height:8px; border-radius:50%; background:#2E8B4A; transition:all 0.3s;"></div>
+        <div id="dot-1" style="width:8px; height:8px; border-radius:50%; background:rgba(0,0,0,0.15); transition:all 0.3s;"></div>
+        <div id="dot-2" style="width:8px; height:8px; border-radius:50%; background:rgba(0,0,0,0.15); transition:all 0.3s;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PREISE -->
+<div id="preise" class="pricing-section">
+  <div style="text-align:center; max-width:1200px; margin:0 auto;">
+    <div class="section-tag" style="text-align:center;">Preise</div>
+    <h2 class="section-title" style="text-align:center; margin-bottom:16px;">Einfach und transparent</h2>
+    <p style="text-align:center; color:#86868b; font-size:17px; margin-bottom:56px;">15 Tage gratis testen — keine Kreditkarte nötig</p>
+    <div style="text-align:left; max-width:600px; margin:0 auto 16px;">
+      <div style="display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(0,122,255,0.1); border:1px solid rgba(0,122,255,0.25); border-radius:20px; font-size:12px; font-weight:700; color:#007AFF;">☁️ Web-Version — ein Geschäft</div>
+    </div>
+    <div style="max-width:500px; margin:0 auto 48px;">
+      <div class="pricing-card web-card">
+        <div class="pricing-icon">☁️</div>
+        <div class="pricing-price" style="color:#007AFF;">CHF 49</div>
+        <div class="pricing-period">pro Monat — jederzeit kündbar</div>
+        <ul class="pricing-features">
+          <li>Zugriff von allen Ihren Geräten</li>
+          <li>Daten in der Cloud gesichert</li>
+          <li>WhatsApp integriert 📱</li>
+          <li>Grafiken &amp; Kalender 📈📅</li>
+          <li>Direkt drucken 🖨️</li>
+          <li>Anzahlungen verfolgen 💰</li>
+          <li>Offerten, Rechnungen, Gutschriften &amp; Lieferscheine 📄</li>
+          <li>Register Dokumente &amp; Excel-Export 🗂️</li>
+          <li>Auf Handy und Tablet 📲</li>
+          <li>Support per E-Mail</li>
+        </ul>
+        <a href="https://buy.stripe.com/eVqdR9aKUb06eE18o26g80l" class="btn-pricing btn-pricing-blue">Abonnieren — Web-Version</a>
+      </div>
+    </div>
+    <div style="max-width:600px; margin:0 auto; padding:20px 24px; background:rgba(175,82,222,0.06); border:1px solid rgba(175,82,222,0.18); border-radius:16px; text-align:center;">
+      <div style="font-size:15px; font-weight:700; color:#1d1d1f; margin-bottom:6px;">🏪 Mehrere Filialen?</div>
+      <div style="font-size:13.5px; color:#86868b; margin-bottom:14px;">Die Filialnetz-Pakete vereinen alle Ihre Geschäfte in einem Abo: von CHF 129 pro Monat für 3 Filialen bis CHF 19.98 pro Filiale bei 50.</div>
+      <a href="#netzwerk" style="display:inline-block; padding:11px 26px; background:linear-gradient(135deg,#AF52DE,#8B3DB8); color:white; border-radius:12px; font-size:13px; font-weight:700; text-decoration:none;">Filialnetz-Pakete ansehen ↑</a>
+    </div>
+    <p style="color:#86868b; font-size:13px; margin-top:28px;">Preise in Schweizer Franken, ohne MWST-Ausweis (siehe <a href="/agb.html" style="color:#2E8B4A;">AGB</a>). 💳 Sichere Zahlung über Stripe — 📧 Support: <a href="mailto:watchtrack.pro@outlook.com" style="color:#2E8B4A;">watchtrack.pro@outlook.com</a></p>
+  </div>
+</div>
+
+<!-- TESTEN -->
+<div id="testen" class="trial-section">
+  <div class="trial-box">
+    <div style="width:70px; height:70px; background:linear-gradient(135deg,#34C759,#2E8B4A); border-radius:20px; display:flex; align-items:center; justify-content:center; font-size:36px; margin:0 auto 20px; box-shadow:0 8px 24px rgba(46,139,74,0.4);">⌚</div>
+    <h2>15 Tage<br/>gratis testen</h2>
+    <p>Öffnen Sie die Web-Version und legen Sie Ihr Konto in zwei Minuten an. Keine Kreditkarte nötig.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;">
+      <a href="https://app.watchtrack-pro.fr/?lang=de" class="btn-hero-blue">☁️ Web-Version testen</a>
+    </div>
+    <p style="font-size:12px; color:#86868b;">Läuft im Browser — keine Installation — Daten in Europa gespeichert</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:12px;">
+    <div style="width:32px; height:32px; background:linear-gradient(135deg,#34C759,#2E8B4A); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:16px;">⌚</div>
+    <strong style="color:#1d1d1f;">WatchTrack MontrePro</strong>
+  </div>
+  <p>Reparatur-Software für Uhrmacher, Schuhmacher, Schlüsseldienste, Juweliere und alle Werkstätten</p>
+  <p style="margin-top:8px;">📧 <a href="mailto:watchtrack.pro@outlook.com">watchtrack.pro@outlook.com</a> — ☁️ <a href="https://app.watchtrack-pro.fr/?lang=de">app.watchtrack-pro.fr</a> — © 2026 WatchTrack MontrePro</p>
+  <p style="margin-top:8px; font-size:13px;"><a href="/impressum.html">Impressum</a> · <a href="/agb.html">AGB</a> · <a href="/datenschutz.html">Datenschutz</a> · <a href="/" lang="fr" hreflang="fr">Version française</a> — MG App StudioTrack, Lyon (Frankreich)</p>
+</footer>
+
+<script>
+const demoRepairs = [
+  { ticket:"001", client:"Anna Keller", montre:"Omega Seamaster", statut:"Bereit", prix:"CHF 120", acompte:"CHF 50", bg:"#A8EFC0", color:"#1A6E35", tel:"0791234567" },
+  { ticket:"002", client:"Thomas Meier", montre:"Rolex Submariner", statut:"In Reparatur", prix:"CHF 350", acompte:"CHF 150", bg:"#FFE0B2", color:"#E65100", tel:"" },
+  { ticket:"003", client:"Sandra Huber", montre:"Seiko SKX007", statut:"Wartet auf Teil", prix:"CHF 45", acompte:"", bg:"#FFF176", color:"#F57F00", tel:"0767654321" },
+  { ticket:"004", client:"Marco Brunner", montre:"Tissot T-Classic", statut:"In der Werkstatt", prix:"CHF 80", acompte:"CHF 40", bg:"#BBDEFB", color:"#1565C0", tel:"" },
+  { ticket:"005", client:"Laura Fischer", montre:"TAG Heuer", statut:"Eingegangen", prix:"CHF 200", acompte:"", bg:"#FCE4EC", color:"#C2185B", tel:"0781122334" },
+];
+const allStatuts = [
+  { label:"🌸 Eingegangen", bg:"#FCE4EC", color:"#C2185B" },
+  { label:"🟣 In Diagnose", bg:"#E1BEE7", color:"#6B1E9E" },
+  { label:"🟠 In Reparatur", bg:"#FFE0B2", color:"#E65100" },
+  { label:"🟡 Wartet auf Teil", bg:"#FFF176", color:"#F57F00" },
+  { label:"🔵 In der Werkstatt", bg:"#BBDEFB", color:"#1565C0" },
+  { label:"🟢 Bereit", bg:"#A8EFC0", color:"#1A6E35" },
+  { label:"🔴 Zurückgegeben", bg:"#FFB8B8", color:"#8B1A1A" },
+];
+const formSteps = [
+  { client:"", montre:"", rep:"" },
+  { client:"Peter Muster", montre:"", rep:"" },
+  { client:"Peter Muster", montre:"Rolex Submariner", rep:"" },
+  { client:"Peter Muster", montre:"Rolex Submariner", rep:"Komplette Revision" },
+];
+let scene = 0, formInterval = null, statutInterval = null;
+function renderDemoTable() {
+  const tbody = document.getElementById('demo-tbody');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  demoRepairs.forEach((r, i) => {
+    const tr = document.createElement('tr');
+    tr.style.cssText = `background:${r.bg}; animation:slideIn 0.4s ease forwards; opacity:0; animation-delay:${0.08*i}s;`;
+    const waBtn = r.tel ? `<span style="padding:3px 8px; background:linear-gradient(135deg,#25D366,#128C7E); color:white; border-radius:6px; font-size:9px; font-weight:700;">📱</span>` : `<span style="color:#ccc; font-size:9px;">—</span>`;
+    tr.innerHTML = `<td style="padding:8px 12px; font-weight:700; color:#B84A00;">${r.ticket}</td><td style="padding:8px 12px; font-weight:600;">${r.client}</td><td style="padding:8px 12px;">${r.montre}</td><td style="padding:8px 12px;"><span style="padding:2px 8px; border-radius:20px; font-size:9px; font-weight:700; background:${r.bg}; color:${r.color}; border:1.5px solid ${r.color};">${r.statut}</span></td><td style="padding:8px 12px; font-weight:700; color:#1A6E35;">${r.prix}</td><td style="padding:8px 12px;">${waBtn}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+function updateNav() {
+  ['dashboard','form','statuts'].forEach((id, i) => {
+    const el = document.getElementById('nav-'+id);
+    if (el) { el.style.background = i===scene ? 'rgba(255,255,255,0.25)' : 'rgba(255,255,255,0.1)'; el.style.color = i===scene ? 'white' : 'rgba(255,255,255,0.6)'; el.style.fontWeight = i===scene ? '700' : '400'; }
+  });
+  for(let i=0;i<3;i++) { const dot = document.getElementById('dot-'+i); if(dot) dot.style.background = i===scene ? '#2E8B4A' : 'rgba(0,0,0,0.15)'; }
+}
+function showScene(s) {
+  scene = s; clearInterval(formInterval); clearInterval(statutInterval);
+  document.getElementById('demo-dashboard').style.display = 'none';
+  document.getElementById('demo-form').style.display = 'none';
+  document.getElementById('demo-statuts').style.display = 'none';
+  if (s === 0) {
+    document.getElementById('demo-dashboard').style.display = 'block';
+    document.getElementById('demo-title').textContent = '📊 Übersicht in Echtzeit';
+    document.getElementById('demo-subtitle').textContent = 'Alle Reparaturen und Ihr Umsatz auf einen Blick';
+    renderDemoTable();
+  } else if (s === 1) {
+    document.getElementById('demo-form').style.display = 'block';
+    document.getElementById('demo-title').textContent = '➕ Reparatur schnell erfassen';
+    document.getElementById('demo-subtitle').textContent = 'Einen Artikel in weniger als 30 Sekunden erfassen';
+    let step = 0;
+    document.getElementById('demo-client').value = '';
+    document.getElementById('demo-montre').value = '';
+    document.getElementById('demo-rep').value = '';
+    formInterval = setInterval(() => {
+      step++;
+      if (step >= formSteps.length) { clearInterval(formInterval); const btn = document.getElementById('demo-save-btn'); if(btn) { btn.style.transform='scale(1.05)'; btn.style.boxShadow='0 8px 24px rgba(46,139,74,0.5)'; } return; }
+      const fs = formSteps[step];
+      document.getElementById('demo-client').value = fs.client;
+      document.getElementById('demo-montre').value = fs.montre;
+      document.getElementById('demo-rep').value = fs.rep;
+    }, 900);
+  } else if (s === 2) {
+    document.getElementById('demo-statuts').style.display = 'block';
+    document.getElementById('demo-title').textContent = '🎨 7 farbige Status + WhatsApp';
+    document.getElementById('demo-subtitle').textContent = 'Status mit 1 Klick ändern — Kunde per WhatsApp informieren';
+    let si = 4;
+    const cards = document.querySelectorAll('.statut-card');
+    function highlightStatut(idx) {
+      cards.forEach(c => { c.style.transform='scale(1)'; c.style.boxShadow='none'; });
+      if(cards[idx]) { cards[idx].style.transform='scale(1.08)'; cards[idx].style.boxShadow='0 8px 20px rgba(0,0,0,0.15)'; }
+      const badge = document.getElementById('statut-badge');
+      if(badge && allStatuts[idx]) { badge.textContent = allStatuts[idx].label; badge.style.background = allStatuts[idx].bg; badge.style.color = allStatuts[idx].color; badge.style.borderColor = allStatuts[idx].color; }
+    }
+    highlightStatut(si);
+    statutInterval = setInterval(() => { si = (si + 1) % allStatuts.length; highlightStatut(si); }, 900);
+    cards.forEach((card, idx) => { card.onclick = () => { clearInterval(statutInterval); highlightStatut(idx); }; });
+  }
+  updateNav();
+}
+function nextScene() { showScene((scene + 1) % 3); }
+document.addEventListener('DOMContentLoaded', function() { showScene(0); setInterval(nextScene, 6000); });
+</script>
+</body>
+</html>
